@@ -1,17 +1,21 @@
+import { FC, ReactElement } from 'react'
+import { Nav } from './components/Navs/navs'
+import './App.css'
+import Header from './components/Header/Header'
+import Ticket from './components/Ticket/Ticket'
+const App: FC = (): ReactElement => {
+    return (
+        <>
+        <Header/>
+        <div className="Global">
+            <Nav />
+            <Ticket/>
+        </div>
+        </>
+    )
+}
 
-import {FC} from 'react';
-import Card from "./COmponents/Card"
-const App:FC = (): => {
-  return (
-    <div>
-      <Card width = "200px" height="200px">
-          <button>Knopka</button>
-        </Card>
-    </div>
-  );
-};
-
-export default App;
+export default App
 
 // import * as React from 'react';
 // import {TodoItem} from './todoItem';
