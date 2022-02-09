@@ -10,7 +10,46 @@ interface ModalProps {
     
     onClose1:()=>void
 }
+    interface ModalProps1 {
+        visible: boolean
+        title: ReactElement|string
+        onClose2:()=>void
+    }
+    const Modal1 = ({
+        visible = false,
+        title = '',
+        onClose2,
+    }: ModalProps1) => {
 
+// создаем обработчик нажатия клавиши Esc
+const onKeydown = ({key}: KeyboardEvent) => {
+switch (key) {
+ case 'Escape':
+     onClose2()
+     break
+}
+}
+React.useEffect(() => {
+document.addEventListener('keydown', onKeydown)
+return () => document.removeEventListener('keydown', onKeydown)
+})
+
+
+// если компонент невидим, то не отображаем его
+if (!visible) return null;
+
+// или возвращаем верстку модального окна
+return <div className="modal" onClick={onClose2}>
+<div className="modal-dialog" onClick={e => e.stopPropagation()}>
+ <div className="modal-header">
+     <h3 className="modal-title">Success</h3>
+     <span className="modal-close" onClick={onClose2}>
+ &times;
+</span>
+ </div>
+</div>
+</div>
+}
 const Modal = ({
                    visible = false,
                    title = '',
@@ -73,12 +112,20 @@ const Ticket = () => {
     const [Pass, setPass]= useState('')
     const [PassDirty, setPassDirty]= useState(false)
     const [PassError, setPassError]= useState("Field must not be empty")
+    const [modal1,setmodal1] = useState(false)
     const onClose = (e) => 
     {
         
         if((emailDirty && emailError=="")&&(telDirty && telError=="")&&(NameDirty && NameError=="")&&(SurnameDirty && SurnameError=="")&&(PassDirty && PassError==""))
-        setModal(false)
+        {
+            
+            
+            setmodal1(true)
+            setTimeout(()=>{setModal(false)},2000);
+        }
         else{alert("Complete all fields")}
+        return 
+        
     }
     const emailHandler=(e)=>{
         setEmail(e.target.value)
@@ -92,6 +139,7 @@ const Ticket = () => {
         }
     }
     const onClose1= () => setModal(false);
+    const onClose2=()=>setmodal1(false);
     const telHandler=(e)=>{
         settel(e.target.value)
         const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
@@ -186,7 +234,14 @@ const Ticket = () => {
                                         <div><input onChange={(e)=>{PassHandler(e)}} value={Pass} onBlur={(e)=>{blurHandler(e)}} name='Pass' type={'text'} placeholder='Enter PassCode'></input></div> 
                                 </div>
                                 }
-                                 footer={<button onClick={onClose}>Send</button>}
+                                 footer={
+                                    <React.Fragment>
+                                 <button className='Go' onClick={onClose}>Send
+                                 <Modal1 visible={modal1} title={<h1>Success</h1>} onClose2={onClose2}/>
+                                 </button>
+                                 </React.Fragment>
+                                 }
+
                                  onClose1={onClose1}
                             />
                         </button>
