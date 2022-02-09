@@ -118,11 +118,10 @@ const Ticket = () => {
         
         if((emailDirty && emailError=="")&&(telDirty && telError=="")&&(NameDirty && NameError=="")&&(SurnameDirty && SurnameError=="")&&(PassDirty && PassError==""))
         {
-            
-            
-            setmodal1(true)
-            setTimeout(()=>{setModal(false)},2000);
-        }
+
+            setmodal1(true) 
+
+      }
         else{alert("Complete all fields")}
         return 
         
