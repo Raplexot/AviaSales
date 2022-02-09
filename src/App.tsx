@@ -6,11 +6,11 @@ import Ticket from './components/Ticket/Ticket'
 const App: FC = (): ReactElement => {
     return (
         <>
-        <Header/>
-        <div className="Global">
-            <Nav />
-            <Ticket/>
-        </div>
+            <Header />
+            <div className="Global">
+                <Nav />
+                <Ticket />
+            </div>
         </>
     )
 }
