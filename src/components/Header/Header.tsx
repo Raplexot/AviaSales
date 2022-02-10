@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { FC } from 'react'
 import logo from '/home/smiss-user46/Avia-Sales/my-app/src/images/plane.png'
-const Header = () => {
+const Header: FC = () => {
     return (
         <img
             style={{
@@ -12,7 +12,7 @@ const Header = () => {
             }}
             src={logo}
             alt="logo"
-        ></img>
+        />
     )
 }
 

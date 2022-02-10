@@ -6,11 +6,11 @@ export const Nav = (): ReactElement => {
         <div className="container">
             <h1>Currency</h1>
             <div className="Button-holder">
-                <button className="B1">Rub</button>
-                <button className="B2">Usd</button>
-                <button className="B3">Eur</button>
+                <button className="B">Rub</button>
+                <button className="B">Usd</button>
+                <button className="B">Eur</button>
             </div>
-            <h1 style={{ paddingTop: 20 }}>Quantity of transfers</h1>
+            <h1 className="Title">Quantity of transfers</h1>
 
             <div className="Checks">
                 <label className="container1">

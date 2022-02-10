@@ -2,7 +2,10 @@
     display: inline-block;
     flex-direction: row;
 }
-
+.Title1 {
+    display: 'inline-block';
+    text-align: 'center';
+}
 .Btn {
     padding: 15px;
     margin-left: 25px;
@@ -11,6 +14,40 @@
     border-top-left-radius: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-shadow: 3px 5px 5px 0px black;
+}
+.ERR {
+    color: 'red';
+}
+.Departure_time {
+    font-size: 35;
+    padding-right: 10;
+}
+.Departure_date {
+    font-size: 20;
+}
+.Origin_name {
+    font-size: 20;
+}
+.Stops {
+    text-align: 'center';
+    opacity: 0.5;
+}
+.Arrow {
+    height: 50;
+    font-size: 0;
+    text-align: 'center';
+}
+.Arrival_time {
+    font-size: 35;
+    padding-left: 10;
+    text-align: 'right';
+}
+.Destination_name {
+    font-size: 20;
+    text-align: 'right';
+}
+.Arrival_date {
+    font-size: 20;
 }
 .Buy {
     margin: 15px;
@@ -38,7 +75,7 @@
     display: flex;
     flex-direction: row;
 }
-.modal1{
+.modal1 {
     position: relative;
     top: 0;
     bottom: 0;
@@ -176,10 +213,10 @@
     padding: 1rem;
 }
 
-.Enters{
+.Enters {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     align-items: center;
-    justify-content: center;    
-    flex-direction:column;
+    justify-content: center;
+    flex-direction: column;
 }
