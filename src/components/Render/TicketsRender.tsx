@@ -10,11 +10,41 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import React from 'react'
 
-const TicketsRender: FC = (item) => {
+
+interface Props{
+    origin: object,
+     origin_name: object,
+      destination: object,
+       destination_name: object,
+        departure_date: object,
+         departure_time: object,
+          arrival_date: object, 
+          arrival_time: object, 
+          carrier: object, 
+          stops: object,
+          price: object 
+
+}
+
+const TicketsRender = ({
+
+    origin={},
+    origin_name={},
+    destination={},
+    destination_name={},
+    departure_date={},
+    departure_time={},
+    arrival_date={}, 
+    arrival_time={}, 
+    carrier={}, 
+    stops={},
+    price={} 
+    }:Props) => {
     const [isModal, setModal] = useState(false)
     const [modal1, setmodal1] = useState(false)
     const onClose = () => {
-        if (!formik.errors) {
+        console.log(!!formik.errors)
+        if (formik.isValid) {
             setmodal1(true)
         } else {
             alert('Complete all fields')
@@ -31,8 +61,8 @@ const TicketsRender: FC = (item) => {
             email: '',
             pass: '',
             tel: '',
-            modal1:false,
-            ismodal:false
+            modal1: false,
+            ismodal: false,
         },
         validationSchema: Yup.object({
             firstName: Yup.string()
@@ -52,7 +82,8 @@ const TicketsRender: FC = (item) => {
                 .required('Required'),
             tel: Yup.string()
                 .matches(
-                    /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+                    /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
+                    'Invalid phone'
                 )
                 .required('Required'),
         }),
@@ -61,17 +92,12 @@ const TicketsRender: FC = (item) => {
         },
     })
 
-
-
-    
-
-
     return (
         <div className="Set">
             <div className="ContainerT">
                 <div className="Contain">
                     <div className="Btn">
-                        {/* <img src={Tick} alt="Ticket"></img> */}
+                        <img src={Tick} alt="Ticket"></img>
                         <div>
                             <React.Fragment>
                                 <button
@@ -79,7 +105,7 @@ const TicketsRender: FC = (item) => {
                                     onClick={() => setModal(true)}
                                     className="Buy"
                                 >
-                                    Buy only for ..
+                                    Buy only for ..{price} RUB
                                     <FirstModal
                                         visible={isModal}
                                         title={
@@ -95,8 +121,7 @@ const TicketsRender: FC = (item) => {
                                                             formik.handleChange
                                                         }
                                                         value={
-                                                            formik.initialValues
-                                                                .email
+                                                            formik.values.email
                                                         }
                                                         onBlur={
                                                             formik.handleBlur
@@ -119,8 +144,7 @@ const TicketsRender: FC = (item) => {
                                                             formik.handleChange
                                                         }
                                                         value={
-                                                            formik.initialValues
-                                                                .tel
+                                                            formik.values.tel
                                                         }
                                                         onBlur={
                                                             formik.handleBlur
@@ -143,7 +167,7 @@ const TicketsRender: FC = (item) => {
                                                             formik.handleChange
                                                         }
                                                         value={
-                                                            formik.initialValues
+                                                            formik.values
                                                                 .firstName
                                                         }
                                                         onBlur={
@@ -170,13 +194,13 @@ const TicketsRender: FC = (item) => {
                                                             formik.handleChange
                                                         }
                                                         value={
-                                                            formik.initialValues
+                                                            formik.values
                                                                 .lastName
                                                         }
                                                         onBlur={
                                                             formik.handleBlur
                                                         }
-                                                        name="surName"
+                                                        name="lastName"
                                                         className="surName"
                                                         type={'text'}
                                                         placeholder="Enter Surname"
@@ -194,8 +218,7 @@ const TicketsRender: FC = (item) => {
                                                             formik.handleChange
                                                         }
                                                         value={
-                                                            formik.initialValues
-                                                                .pass
+                                                            formik.values.pass
                                                         }
                                                         onBlur={
                                                             formik.handleBlur
@@ -238,22 +261,26 @@ const TicketsRender: FC = (item) => {
                     <div className="Info">
                         <div className="Start">
                             <div className="Departure_time">
-                                {/* {item.departure_time} */}
+                                {departure_time}  
                             </div>
                             <div className="Origin_name">
-                                {/* {item.origin_name} */}
+                                {origin_name} 
                             </div>
                             <div className="Departure_date">
-                                {/* {item.departure_date} */}
+                                {departure_date} 
                             </div>
                         </div>
                         <div className="Stop">
                             <div className="Stops">
-                                {/* {item.stops} stops */}
+                                {stops} stops
                             </div>
                             <div>
                                 <img
                                     className="Arrow"
+                                    style={{
+                                        height: 50,
+                                        textAlign: 'center',
+                                    }}
                                     src={Arrow}
                                     alt="Arrow"
                                 ></img>
@@ -261,13 +288,13 @@ const TicketsRender: FC = (item) => {
                         </div>
                         <div className="Finish">
                             <div className="Arrival_time">
-                                {/* {item.arrival_time} */}
+                                {arrival_time}
                             </div>
                             <div className="Destination_name">
-                                {/* {item.destination_name} */}
+                                 {destination_name} 
                             </div>
                             <div className="Arrival_date">
-                                {/* {item.arrival_date} */}
+                                 {arrival_date} 
                             </div>
                         </div>
                     </div>

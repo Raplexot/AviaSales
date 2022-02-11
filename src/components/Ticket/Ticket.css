@@ -1,6 +1,7 @@
 .ContainerT {
     display: inline-block;
     flex-direction: row;
+    margin-bottom: 25px;
 }
 .Title1 {
     display: 'inline-block';
