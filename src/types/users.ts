@@ -4,6 +4,12 @@ export interface UserState {
     error: null | string
 }
 
+export interface MoneyState {
+    money: any[]
+    loading: boolean
+    error: null | string
+}
+
 export enum UserActionTypes {
     FETCH_USERS = 'FETCH_USERS',
     FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS',
@@ -21,6 +27,29 @@ interface FetchUsersErrorAction {
     type: UserActionTypes.FETCH_USERS_ERROR
     payload: string
 }
+
+export enum MoneyActionTypes {
+    FETCH_MONEY = 'FETCH_MONEY',
+    FETCH_MONEY_SUCCESS = 'FETCH_MONEY_SUCCESS',
+    FETCH_MONEY_ERROR = 'FETCH_MONEY_ERROR',
+}
+
+interface FetchMoneyAction {
+    type: MoneyActionTypes.FETCH_MONEY
+}
+interface FetchMoneySuccessAction {
+    type: MoneyActionTypes.FETCH_MONEY_SUCCESS
+    payload: any[]
+}
+interface FetchMoneyErrorAction {
+    type: MoneyActionTypes.FETCH_MONEY_ERROR
+    payload: string
+}
+
+export type MoneyAction =
+    | FetchMoneyAction
+    | FetchMoneyErrorAction
+    | FetchMoneySuccessAction
 
 export type UserAction =
     | FetchUsersAction

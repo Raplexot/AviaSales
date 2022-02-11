@@ -6,7 +6,14 @@ export const Nav = (): ReactElement => {
         <div className="container">
             <h1>Currency</h1>
             <div className="Button-holder">
-                <button className="B">Rub</button>
+                <button
+                    className="B"
+                    onClick={() => {
+                        return 1
+                    }}
+                >
+                    Rub
+                </button>
                 <button className="B">Usd</button>
                 <button className="B">Eur</button>
             </div>

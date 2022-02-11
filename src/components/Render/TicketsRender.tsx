@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable max-len */
 import { FC, useState } from 'react'
-import '../Ticket/Ticket.css'
+import './TicketRender.css'
 import Tick from '/home/smiss-user46/Avia-Sales/my-app/src/images/Tick.png'
 import Arrow from '/home/smiss-user46/Avia-Sales/my-app/src/images/arrow.png'
 import FirstModal from './firstModal'
@@ -10,36 +10,33 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import React from 'react'
 
-
-interface Props{
-    origin: object,
-     origin_name: object,
-      destination: object,
-       destination_name: object,
-        departure_date: object,
-         departure_time: object,
-          arrival_date: object, 
-          arrival_time: object, 
-          carrier: object, 
-          stops: object,
-          price: object 
-
+interface Props {
+    origin: object
+    origin_name: object
+    destination: object
+    destination_name: object
+    departure_date: object
+    departure_time: object
+    arrival_date: object
+    arrival_time: object
+    carrier: object
+    stops: object
+    price: object
 }
 
 const TicketsRender = ({
-
-    origin={},
-    origin_name={},
-    destination={},
-    destination_name={},
-    departure_date={},
-    departure_time={},
-    arrival_date={}, 
-    arrival_time={}, 
-    carrier={}, 
-    stops={},
-    price={} 
-    }:Props) => {
+    origin = {},
+    origin_name = {},
+    destination = {},
+    destination_name = {},
+    departure_date = {},
+    departure_time = {},
+    arrival_date = {},
+    arrival_time = {},
+    carrier = {},
+    stops = {},
+    price = {},
+}: Props) => {
     const [isModal, setModal] = useState(false)
     const [modal1, setmodal1] = useState(false)
     const onClose = () => {
@@ -260,20 +257,16 @@ const TicketsRender = ({
                     </div>
                     <div className="Info">
                         <div className="Start">
-                            <div className="Departure_time">
-                                {departure_time}  
+                            <div className="Departure-time">
+                                {departure_time}
                             </div>
-                            <div className="Origin_name">
-                                {origin_name} 
-                            </div>
-                            <div className="Departure_date">
-                                {departure_date} 
+                            <div className="Origin-name">{origin_name}</div>
+                            <div className="Departure-date">
+                                {departure_date}
                             </div>
                         </div>
                         <div className="Stop">
-                            <div className="Stops">
-                                {stops} stops
-                            </div>
+                            <div className="Stops">{stops} stops</div>
                             <div>
                                 <img
                                     className="Arrow"
@@ -287,15 +280,11 @@ const TicketsRender = ({
                             </div>
                         </div>
                         <div className="Finish">
-                            <div className="Arrival_time">
-                                {arrival_time}
+                            <div className="Arrival-time">{arrival_time}</div>
+                            <div className="Destination-name">
+                                {destination_name}
                             </div>
-                            <div className="Destination_name">
-                                 {destination_name} 
-                            </div>
-                            <div className="Arrival_date">
-                                 {arrival_date} 
-                            </div>
+                            <div className="Arrival-date">{arrival_date}</div>
                         </div>
                     </div>
                 </div>
