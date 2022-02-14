@@ -5,7 +5,14 @@ import { fetchUsers } from '../../store/action-creator/user'
 import { useActions } from '../../hooks/useActions'
 import { RootState } from '../../store/reducers'
 
-const Ticket: FC = () => {
+interface Props{
+price:object
+}
+
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+const Ticket = ({
+    price:{}
+}:Props) => {
     const { users, error, loading } = useTypedSelector(
         (state: RootState) => state.user
     )
@@ -46,80 +53,5 @@ const Ticket: FC = () => {
             ))}
         </ul>
     )
-    //     const [error, setError] = useState(null);
-    //     const [isLoaded, setIsLoaded] = useState(false);
-    //     const [items, setItems] = useState([{ origin: '', origin_name: '', destination: '', destination_name: '', departure_date: '', departure_time: '', arrival_date: '', arrival_time: '', carrier: '', stops: '', price: '' }]);
-
-    //     useEffect(() => {
-
-    //         fetch(
-    //             'https://raw.githubusercontent.com/BrowningForce/aviasales-react/master/tickets.json'
-    //         )
-    //             .then((res) => res.json())
-    //             .then(
-    //                 (result) => {
-    //                     setIsLoaded(true);
-    //                     setItems(result.tickets.sort((obj1: { price: string }, obj2: { price: string }) =>
-    //                         obj1.price > obj2.price ? 1 : -1
-    //                     ))
-
-    //                 },
-    //                 (error) => {
-    //                     setIsLoaded(true);
-    //                     setError(error);
-    //                 }
-    //             )
-
-    //     })
-
-    //     if (error) {
-    //         return <p>Error {error["message"]}</p>
-    //     }else if (!isLoaded){
-    //         return <p>loading...</p>
-    //     } else {
-    //         return (
-    //             <ul>
-    //                 {items.pma((item: any, ind) => (
-    //                     <li key={ind}><TicketsRender   /></li>
-    //                 ))}
-    //             </ul>
-    //         )
-    //     }
-
-    // }
-
-    /* eslint-disable @typescript-eslint/explicit-function-return-type */
-
-    // origin={item.origin} origin_name={item.origin_name} destination={item.destination} destination_name={item.destination_name} departure_date={item.departure_date} departure_time={item.departure_time} arrival_date={item.arrival_date} arrival_time={item.arrival_time} carrier={item.carrier} stops={item.stops} price={item.price}
-
-    // class Ticket extends Component{
-    //     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-    //     componentDidMount(){
-    //         // eslint-disable-next-line react/prop-types
-    //         this.props.fetchData('https://raw.githubusercontent.com/BrowningForce/aviasales-react/master/tickets.json')
-    //     }
-    //     render(){
-    //         return (
-    //             <div>
-    //                 <ul>
-    //                     {this.props.tickets.map((item)=>{
-    //                         return <li key={item["name"]}>{TicketsRender(item)}</li>
-    //                     })}
-    //                 </ul>
-    //             </div>
-    //         )
-    //     }
-    // }
-    // /* eslint-disable @typescript-eslint/explicit-function-return-type */
-
-    // const mapStateToProps = state =>{
-    //     return {tickets:state.tickets};
-    // };
-    // const mapDispatchToProps = dispatch =>{
-    //     return {
-    //         fetchData:url =>{dispatch(ticketsFetchData(url))}
-    //     };
-    // };
-    //  export default connect(mapStateToProps,mapDispatchToProps)(Ticket);
 }
 export default Ticket

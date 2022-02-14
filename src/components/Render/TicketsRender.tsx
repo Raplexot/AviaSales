@@ -102,7 +102,7 @@ const TicketsRender = ({
                                     onClick={() => setModal(true)}
                                     className="Buy"
                                 >
-                                    Buy only for ..{price} RUB
+                                    Buy only for ..{price} 
                                     <FirstModal
                                         visible={isModal}
                                         title={
