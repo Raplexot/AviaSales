@@ -18,35 +18,25 @@ console.log(stops)
             <h1 className="Title">Quantity of transfers</h1>
 
             <div className="Checks">
-                <label className="container1"> 
-                    All
-                    <button type="button" onClick={()=>setStops('-1')}></button>
-                    <span className="checkmar"></span>
-                </label>
+                
+                    <button className="btn btn-info" type="submit" onClick={()=>setStops('-1')}> All</button>
+               
 
-                <label className="container1">
-                    No transfers
-                    <button type="button" onClick={() => setStops('0')}></button>
-                    <span className="checkmar"></span>
-                </label>
+                    
+                    <button className="btn btn-info" type="submit" onClick={() => setStops('0')}> No transfers</button>
+                
 
-                <label className="container1">
-                    1 transfer
-                    <button type="button" onClick={() => setStops('1')}></button>
-                    <span className="checkmar"></span>
-                </label>
+                
+                    <button className="btn btn-info" type="submit" onClick={() => setStops('1')}> 1 transfer</button>
+                    
 
-                <label className="container1">
-                    2 transfers
-                    <button type="button" onClick={() => setStops('2')}></button>
-                    <span className="checkmar"></span>
-                </label>
+                
+                    <button className="btn btn-info" type="submit" onClick={() => setStops('2')}>2 transfers</button>
+                    
 
-                <label className="container1">
-                    3 transfers
-                    <input type="button" onClick={() => setStops('3')}></input>
-                    <span className="checkmar"></span>
-                </label>
+                
+                    <button type="submit" className="btn btn-info" onClick={() => setStops('3')}>3 transfers</button>
+                   
             </div>
         </div>
         
