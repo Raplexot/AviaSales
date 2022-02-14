@@ -2,8 +2,6 @@
 import axios from 'axios'
 import { Dispatch } from 'react'
 import {
-    MoneyAction,
-    MoneyActionTypes,
     UserAction,
     UserActionTypes,
 } from '../../types/users'
@@ -26,29 +24,4 @@ export const fetchUsers = () => {
             })
         }
     }
-}
-
-export const fetchMoney = () => {
-    return async (dispatch: Dispatch<MoneyAction>) => {
-        try {
-            dispatch({ type: MoneyActionTypes.FETCH_MONEY })
-            const response = await axios.get(
-                'https://raw.githubusercontent.com/BrowningForce/aviasales-react/master/tickets.json'
-            )
-            dispatch({
-                type: MoneyActionTypes.FETCH_MONEY_SUCCESS,
-                payload: response.data.tickets,
-            })
-        } catch (e) {
-            dispatch({
-                type: MoneyActionTypes.FETCH_MONEY_ERROR,
-                payload: 'Error of dounload',
-            })
-        }
-    }
-
-
-
-
-   
 }

@@ -5,9 +5,9 @@ export interface UserState {
 }
 
 export interface MoneyState {
-    money: any[]
-    loading: boolean
-    error: null | string
+    money: object
+    moneyloading: boolean
+    moneyerror: null | string
 }
 
 export enum UserActionTypes {
@@ -39,7 +39,7 @@ interface FetchMoneyAction {
 }
 interface FetchMoneySuccessAction {
     type: MoneyActionTypes.FETCH_MONEY_SUCCESS
-    payload: any[]
+    payload: object
 }
 interface FetchMoneyErrorAction {
     type: MoneyActionTypes.FETCH_MONEY_ERROR

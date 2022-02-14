@@ -13,9 +13,9 @@ const initialState: UserState = {
     error: null,
 }
 const initialStateMoney: MoneyState = {
-    money: [],
-    loading: false,
-    error: null,
+    money: {},
+    moneyloading: false,
+    moneyerror: null,
 }
 
 export const userReducer = (
@@ -43,13 +43,13 @@ export const moneyReducer = (
 ): MoneyState => {
     switch (action.type) {
         case MoneyActionTypes.FETCH_MONEY:
-            return { loading: true, error: null, money: [] }
+            return { moneyloading: true, moneyerror: null, money: {} }
             break
         case MoneyActionTypes.FETCH_MONEY_SUCCESS:
-            return { loading: false, error: null, money: action.payload }
+            return { moneyloading: false, moneyerror: null, money: action.payload }
             break
         case MoneyActionTypes.FETCH_MONEY_ERROR:
-            return { loading: false, error: action.payload, money: [] }
+            return { moneyloading: false, moneyerror: action.payload, money: {} }
             break
         default:
             return state
