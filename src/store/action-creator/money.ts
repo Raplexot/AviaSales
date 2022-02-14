@@ -1,21 +1,18 @@
 import axios from 'axios'
 import { Dispatch } from 'react'
-import {MoneyAction,MoneyActionTypes} from '../../types/users'
-
-
+import { MoneyAction, MoneyActionTypes } from '../../types/users'
 
 export const fetchMoney = () => {
     return async (dispatch: Dispatch<MoneyAction>) => {
         try {
             dispatch({ type: MoneyActionTypes.FETCH_MONEY })
             const response = await axios.get(
-                'https://open.er-api.com/v6/latest/RUB'
+                "https://freecurrencyapi.net/api/v2/latest?apikey=YOUR-APIKEY"
             )
             dispatch({
                 type: MoneyActionTypes.FETCH_MONEY_SUCCESS,
-                payload: response.data.rates,
+                payload: response.data.data,
             })
-           
         } catch (e) {
             dispatch({
                 type: MoneyActionTypes.FETCH_MONEY_ERROR,
@@ -23,9 +20,4 @@ export const fetchMoney = () => {
             })
         }
     }
-
-
-
-
-   
 }

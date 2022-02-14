@@ -85,7 +85,7 @@ const TicketsRender = ({
                 .required('Required'),
         }),
         onSubmit: (values) => {
-            if (!formik.errors) setmodal1(true)
+            if (formik.isValid) setmodal1(true)
         },
     })
 
@@ -102,7 +102,7 @@ const TicketsRender = ({
                                     onClick={() => setModal(true)}
                                     className="Buy"
                                 >
-                                    Buy only for ..{price} 
+                                    Buy only for ..{price}
                                     <FirstModal
                                         visible={isModal}
                                         title={

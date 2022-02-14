@@ -1,10 +1,7 @@
 /* eslint-disable max-len */
 import axios from 'axios'
 import { Dispatch } from 'react'
-import {
-    UserAction,
-    UserActionTypes,
-} from '../../types/users'
+import { UserAction, UserActionTypes } from '../../types/users'
 
 export const fetchUsers = () => {
     return async (dispatch: Dispatch<UserAction>) => {

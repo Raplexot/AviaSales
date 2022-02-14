@@ -8,7 +8,7 @@ export const useActions = () => {
     return bindActionCreators(UserActionCreators, dispatch)
 }
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const useActionsMoney= () =>{
+export const useActionsMoney = () => {
     const dispatch = useDispatch()
-    return bindActionCreators(MoneyActionCreators,dispatch)
+    return bindActionCreators(MoneyActionCreators, dispatch)
 }

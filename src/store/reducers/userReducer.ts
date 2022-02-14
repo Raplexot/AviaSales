@@ -46,10 +46,18 @@ export const moneyReducer = (
             return { moneyloading: true, moneyerror: null, money: {} }
             break
         case MoneyActionTypes.FETCH_MONEY_SUCCESS:
-            return { moneyloading: false, moneyerror: null, money: action.payload }
+            return {
+                moneyloading: false,
+                moneyerror: null,
+                money: action.payload,
+            }
             break
         case MoneyActionTypes.FETCH_MONEY_ERROR:
-            return { moneyloading: false, moneyerror: action.payload, money: {} }
+            return {
+                moneyloading: false,
+                moneyerror: action.payload,
+                money: {},
+            }
             break
         default:
             return state

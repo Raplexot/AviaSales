@@ -150,12 +150,11 @@
     padding-top: 20;
 }
 
-.Boxes{
-    display:flex
-    
+.Boxes {
+    display: flex;
 }
-.checkmar{
-    width:15px;
+.checkmar {
+    width: 15px;
 }
 
 .btn {

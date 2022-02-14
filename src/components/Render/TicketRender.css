@@ -1,341 +1,343 @@
 .ContainerT {
-  display: inline-block;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  margin-bottom: 25px;
+    display: inline-block;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-bottom: 25px;
 }
 
 .Title1 {
-  display: 'inline-block';
-  text-align: 'center';
+    display: 'inline-block';
+    text-align: 'center';
 }
 
 .Btn {
-  padding: 15px;
-  margin-left: 25px;
-  background-color: #ffffff;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  -webkit-box-shadow: 3px 5px 5px 0px black;
-          box-shadow: 3px 5px 5px 0px black;
+    padding: 15px;
+    margin-left: 25px;
+    background-color: #ffffff;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-box-shadow: 3px 5px 5px 0px black;
+    box-shadow: 3px 5px 5px 0px black;
 }
 
 .ERR {
-  color: 'red';
+    color: 'red';
 }
 
 .Departure-time {
-  font-size: 35;
-  padding-right: 10;
+    font-size: 35;
+    padding-right: 10;
 }
 
 .Departure-date {
-  font-size: 20;
+    font-size: 20;
 }
 
 .Origin-name {
-  font-size: 20;
+    font-size: 20;
 }
 
 .Stops {
-  text-align: 'center';
-  opacity: 0.5;
+    text-align: 'center';
+    opacity: 0.5;
 }
 
 .Arrow {
-  height: 50;
-  font-size: 0;
-  text-align: 'center';
+    height: 50;
+    font-size: 0;
+    text-align: 'center';
 }
 
 .Arrival-time {
-  font-size: 35;
-  padding-left: 10;
-  text-align: 'right';
+    font-size: 35;
+    padding-left: 10;
+    text-align: 'right';
 }
 
 .Destination-name {
-  font-size: 20;
-  text-align: 'right';
+    font-size: 20;
+    text-align: 'right';
 }
 
 .Arrival-date {
-  font-size: 20;
+    font-size: 20;
 }
 
 .Buy {
-  margin: 15px;
-  padding: 20px;
-  background-color: orange;
-  font-size: 20px;
-  text-align: center;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
+    margin: 15px;
+    padding: 20px;
+    background-color: orange;
+    font-size: 20px;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .Info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  padding: 15px;
-  background-color: #ffffff;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  -webkit-box-shadow: 3px 5px 5px 0px black;
-          box-shadow: 3px 5px 5px 0px black;
-  font-size: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 15px;
+    background-color: #ffffff;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-box-shadow: 3px 5px 5px 0px black;
+    box-shadow: 3px 5px 5px 0px black;
+    font-size: 20px;
 }
 
 .Contain {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
 }
 
 .modal1 {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 9999;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: rgba(0, 0, 0, 0.25);
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 .modal {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 9999;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: rgba(0, 0, 0, 0.25);
-  -webkit-animation-name: appear;
-          animation-name: appear;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    -webkit-animation-name: appear;
+    animation-name: appear;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
 }
 
 .modal-dialog {
-  width: 100%;
-  max-width: 550px;
-  background: white;
-  position: relative;
-  margin: 0 20px;
-  max-height: calc(100vh - 40px);
-  text-align: left;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  overflow: hidden;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  -webkit-animation-name: slide-in;
-          animation-name: slide-in;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+    width: 100%;
+    max-width: 550px;
+    background: white;
+    position: relative;
+    margin: 0 20px;
+    max-height: calc(100vh - 40px);
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-name: slide-in;
+    animation-name: slide-in;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
 }
 
 .modal-header,
 .modal-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 1rem;
 }
 
 .modal-header {
-  border-bottom: 1px solid #dbdbdb;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+    border-bottom: 1px solid #dbdbdb;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .modal-footer {
-  border-top: 1px solid #dbdbdb;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+    border-top: 1px solid #dbdbdb;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
 }
 
 .modal-close {
-  cursor: pointer;
-  padding: 1rem;
-  margin: -1rem -1rem -1rem auto;
+    cursor: pointer;
+    padding: 1rem;
+    margin: -1rem -1rem -1rem auto;
 }
 
 .modal-body {
-  overflow: auto;
+    overflow: auto;
 }
 
 .modal-content {
-  padding: 1rem;
+    padding: 1rem;
 }
 
 .modal-title {
-  margin: 0;
+    margin: 0;
 }
 
 @-webkit-keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @-webkit-keyframes slide-in {
-  from {
-    -webkit-transform: translateY(-150px);
-            transform: translateY(-150px);
-  }
-  to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
+    from {
+        -webkit-transform: translateY(-150px);
+        transform: translateY(-150px);
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 }
 
 @keyframes slide-in {
-  from {
-    -webkit-transform: translateY(-150px);
-            transform: translateY(-150px);
-  }
-  to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
+    from {
+        -webkit-transform: translateY(-150px);
+        transform: translateY(-150px);
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 }
 
 .modal1 {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 9999;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: rgba(0, 0, 0, 0.25);
-  -webkit-animation-name: appear;
-          animation-name: appear;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    -webkit-animation-name: appear;
+    animation-name: appear;
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
 }
 
 .modal-dialog1 {
-  width: 100%;
-  max-width: 550px;
-  background: white;
-  position: relative;
-  margin: 0 20px;
-  max-height: calc(100vh - 40px);
-  text-align: left;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  overflow: hidden;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  -webkit-animation-name: slide-in;
-          animation-name: slide-in;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+    width: 100%;
+    max-width: 550px;
+    background: white;
+    position: relative;
+    margin: 0 20px;
+    max-height: calc(100vh - 40px);
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-name: slide-in;
+    animation-name: slide-in;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
 }
 
 .modal-close1 {
-  cursor: pointer;
-  padding: 1rem;
-  margin: -1rem -1rem -1rem auto;
+    cursor: pointer;
+    padding: 1rem;
+    margin: -1rem -1rem -1rem auto;
 }
 
 .modal-body1 {
-  overflow: auto;
+    overflow: auto;
 }
 
 .modal-content1 {
-  padding: 1rem;
+    padding: 1rem;
 }
 
 .Enters {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
