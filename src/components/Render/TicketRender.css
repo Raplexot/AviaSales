@@ -12,7 +12,7 @@
     text-align: 'center';
 }
 
-.Btn {
+.Buttn {
     padding: 15px;
     margin-left: 25px;
     background-color: #ffffff;
@@ -133,7 +133,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    z-index: 9999;
+    z-index: 9998;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -283,6 +283,10 @@
     -webkit-animation-duration: 300ms;
     animation-duration: 300ms;
 }
+.modal-title1 {
+    margin-top: 5px;
+    text-align: center;
+}
 
 .modal-dialog1 {
     width: 100%;
@@ -310,11 +314,22 @@
     -webkit-animation-duration: 0.5s;
     animation-duration: 0.5s;
 }
+.modal-header1 {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 10px;
+    border-bottom: 1px solid #dbdbdb;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: aquamarine;
+    color: black;
+}
 
 .modal-close1 {
+    margin-left: 20px;
     cursor: pointer;
     padding: 1rem;
-    margin: -1rem -1rem -1rem auto;
 }
 
 .modal-body1 {

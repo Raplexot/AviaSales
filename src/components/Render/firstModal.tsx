@@ -3,10 +3,9 @@ import React, { ReactElement } from 'react'
 
 interface ModalProps {
     visible: boolean
-    title: ReactElement | string
+    title: string
     content: ReactElement | string
     footer: ReactElement | string
-
     onClose1: () => void
 }
 

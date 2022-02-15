@@ -68,7 +68,9 @@ export const Nav = (): ReactElement => {
                 </div>
             </div>
 
-            <Ticket i={stops} moneys={money} />
+            <div>
+                <Ticket i={stops} moneys={money} />
+            </div>
         </div>
     )
 }

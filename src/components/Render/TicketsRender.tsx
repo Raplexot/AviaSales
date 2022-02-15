@@ -22,8 +22,8 @@ interface Props {
     carrier: object
     stops: object
     price: number
-    rate:number
-    moneys:string
+    rate: number
+    moneys: string
 }
 
 const TicketsRender = ({
@@ -38,14 +38,14 @@ const TicketsRender = ({
     carrier = {},
     stops = {},
     price = 0,
-    rate=0,
-    moneys='RUB'
+    rate = 0,
+    moneys = 'RUB',
 }: Props) => {
     const [isModal, setModal] = useState(false)
     const [modal1, setmodal1] = useState(false)
     const onClose = () => {
-        console.log(!!formik.errors)
-        if (formik.isValid) {
+        console.log(formik.touched)
+        if (formik.isValid && formik.dirty) {
             setmodal1(true)
         } else {
             alert('Complete all fields')
@@ -97,7 +97,7 @@ const TicketsRender = ({
         <div className="Set">
             <div className="ContainerT">
                 <div className="Contain">
-                    <div className="Btn">
+                    <div className="Buttn">
                         <img src={Tick} alt="Ticket"></img>
                         <div>
                             <React.Fragment>
@@ -106,157 +106,130 @@ const TicketsRender = ({
                                     onClick={() => setModal(true)}
                                     className="Buy"
                                 >
-                                    Buy only for ..{(price*rate).toFixed(0)+moneys}
-                                    
-                                    <FirstModal
-                                        visible={isModal}
-                                        title={
-                                            <div className="Title1">
-                                                Please , enter info
-                                            </div>
-                                        }
-                                        content={
-                                            <div className="Enters">
-                                                <div>
-                                                    <input
-                                                        onChange={
-                                                            formik.handleChange
-                                                        }
-                                                        value={
-                                                            formik.values.email
-                                                        }
-                                                        onBlur={
-                                                            formik.handleBlur
-                                                        }
-                                                        name="email"
-                                                        className="Email"
-                                                        type={'email'}
-                                                        placeholder="Enter Email"
-                                                    ></input>
-                                                </div>
-                                                {formik.touched.email &&
-                                                formik.errors.email ? (
-                                                    <p className="ERR">
-                                                        {formik.errors.email}
-                                                    </p>
-                                                ) : null}
-                                                <div>
-                                                    <input
-                                                        onChange={
-                                                            formik.handleChange
-                                                        }
-                                                        value={
-                                                            formik.values.tel
-                                                        }
-                                                        onBlur={
-                                                            formik.handleBlur
-                                                        }
-                                                        name="tel"
-                                                        className="Phone"
-                                                        type={'tel'}
-                                                        placeholder="Enter Phone"
-                                                    ></input>
-                                                </div>
-                                                {formik.touched.tel &&
-                                                formik.errors.tel ? (
-                                                    <p className="ERR">
-                                                        {formik.errors.tel}
-                                                    </p>
-                                                ) : null}
-                                                <div>
-                                                    <input
-                                                        onChange={
-                                                            formik.handleChange
-                                                        }
-                                                        value={
-                                                            formik.values
-                                                                .firstName
-                                                        }
-                                                        onBlur={
-                                                            formik.handleBlur
-                                                        }
-                                                        name="firstName"
-                                                        className="firstName"
-                                                        type={'text'}
-                                                        placeholder="Enter Name"
-                                                    ></input>
-                                                </div>
-                                                {formik.touched.firstName &&
-                                                formik.errors.firstName ? (
-                                                    <p className="ERR">
-                                                        {
-                                                            formik.errors
-                                                                .firstName
-                                                        }
-                                                    </p>
-                                                ) : null}
-                                                <div>
-                                                    <input
-                                                        onChange={
-                                                            formik.handleChange
-                                                        }
-                                                        value={
-                                                            formik.values
-                                                                .lastName
-                                                        }
-                                                        onBlur={
-                                                            formik.handleBlur
-                                                        }
-                                                        name="lastName"
-                                                        className="surName"
-                                                        type={'text'}
-                                                        placeholder="Enter Surname"
-                                                    ></input>
-                                                </div>
-                                                {formik.touched.lastName &&
-                                                formik.errors.lastName ? (
-                                                    <p className="ERR">
-                                                        {formik.errors.lastName}
-                                                    </p>
-                                                ) : null}
-                                                <div>
-                                                    <input
-                                                        onChange={
-                                                            formik.handleChange
-                                                        }
-                                                        value={
-                                                            formik.values.pass
-                                                        }
-                                                        onBlur={
-                                                            formik.handleBlur
-                                                        }
-                                                        name="pass"
-                                                        type={'text'}
-                                                        placeholder="Enter passCode"
-                                                    ></input>
-                                                </div>
-                                                {formik.touched.pass &&
-                                                formik.errors.pass ? (
-                                                    <p className="ERR">
-                                                        {formik.errors.pass}
-                                                    </p>
-                                                ) : null}
-                                            </div>
-                                        }
-                                        footer={
-                                            <React.Fragment>
-                                                <button
-                                                    className="Go"
-                                                    type="submit"
-                                                    onClick={onClose}
-                                                >
-                                                    Send
-                                                    <SecondModal
-                                                        visible={modal1}
-                                                        title={<h1>Success</h1>}
-                                                        onClose2={onClose2}
-                                                    />
-                                                </button>
-                                            </React.Fragment>
-                                        }
-                                        onClose1={onClose1}
-                                    />
+                                    Buy only for ..
+                                    {(price * rate).toFixed(0) + moneys}{' '}
                                 </button>
+                                <FirstModal
+                                    visible={isModal}
+                                    title="Please , enter info"
+                                    content={
+                                        <div className="Enters">
+                                            <div>
+                                                <input
+                                                    onChange={
+                                                        formik.handleChange
+                                                    }
+                                                    value={formik.values.email}
+                                                    onBlur={formik.handleBlur}
+                                                    name="email"
+                                                    className="Email"
+                                                    type={'email'}
+                                                    placeholder="Enter Email"
+                                                ></input>
+                                            </div>
+                                            {formik.touched.email &&
+                                            formik.errors.email ? (
+                                                <p className="ERR">
+                                                    {formik.errors.email}
+                                                </p>
+                                            ) : null}
+                                            <div>
+                                                <input
+                                                    onChange={
+                                                        formik.handleChange
+                                                    }
+                                                    value={formik.values.tel}
+                                                    onBlur={formik.handleBlur}
+                                                    name="tel"
+                                                    className="Phone"
+                                                    type={'tel'}
+                                                    placeholder="Enter Phone"
+                                                ></input>
+                                            </div>
+                                            {formik.touched.tel &&
+                                            formik.errors.tel ? (
+                                                <p className="ERR">
+                                                    {formik.errors.tel}
+                                                </p>
+                                            ) : null}
+                                            <div>
+                                                <input
+                                                    onChange={
+                                                        formik.handleChange
+                                                    }
+                                                    value={
+                                                        formik.values.firstName
+                                                    }
+                                                    onBlur={formik.handleBlur}
+                                                    name="firstName"
+                                                    className="firstName"
+                                                    type={'text'}
+                                                    placeholder="Enter Name"
+                                                ></input>
+                                            </div>
+                                            {formik.touched.firstName &&
+                                            formik.errors.firstName ? (
+                                                <p className="ERR">
+                                                    {formik.errors.firstName}
+                                                </p>
+                                            ) : null}
+                                            <div>
+                                                <input
+                                                    onChange={
+                                                        formik.handleChange
+                                                    }
+                                                    value={
+                                                        formik.values.lastName
+                                                    }
+                                                    onBlur={formik.handleBlur}
+                                                    name="lastName"
+                                                    className="surName"
+                                                    type={'text'}
+                                                    placeholder="Enter Surname"
+                                                ></input>
+                                            </div>
+                                            {formik.touched.lastName &&
+                                            formik.errors.lastName ? (
+                                                <p className="ERR">
+                                                    {formik.errors.lastName}
+                                                </p>
+                                            ) : null}
+                                            <div>
+                                                <input
+                                                    onChange={
+                                                        formik.handleChange
+                                                    }
+                                                    value={formik.values.pass}
+                                                    onBlur={formik.handleBlur}
+                                                    name="pass"
+                                                    type={'text'}
+                                                    placeholder="Enter passCode"
+                                                ></input>
+                                            </div>
+                                            {formik.touched.pass &&
+                                            formik.errors.pass ? (
+                                                <p className="ERR">
+                                                    {formik.errors.pass}
+                                                </p>
+                                            ) : null}
+
+                                            <button
+                                                className="Go"
+                                                type="submit"
+                                                onClick={onClose}
+                                            >
+                                                Send
+                                                <SecondModal
+                                                    visible={modal1}
+                                                    title="Success"
+                                                    onClose2={onClose2}
+                                                />
+                                            </button>
+                                        </div>
+                                    }
+                                    footer={<div></div>}
+                                    onClose1={onClose1}
+                                />
                             </React.Fragment>
                         </div>
                     </div>
