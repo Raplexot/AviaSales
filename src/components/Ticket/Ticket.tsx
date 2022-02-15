@@ -1,114 +1,79 @@
-import React, { FC, useState, useEffect, Component } from 'react'
+import React, { useEffect } from 'react'
 import TicketsRender from '../Render/TicketsRender'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
-import { fetchUsers } from '../../store/action-creator/user'
+import { fetchTickets} from '../../store/action-creator/ticket'
 import { useActions, useActionsMoney } from '../../hooks/useActions'
 import { RootState } from '../../store/reducers'
 import { fetchMoney } from '../../store/action-creator/money'
+import {IntMoney} from '../../types/tickets'
 
 interface Prop {
-    i: string
+    stopsprops: number
     moneys: string
 }
 
-type OnlyStrings = {
-    [key: string]: number
-}
+
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const Ticket = ({ i = '', moneys = 'RUB' }: Prop) => {
-    const { users, error, loading } = useTypedSelector(
-        (state: RootState) => state.user
+const Ticket = ({ stopsprops = 0, moneys = 'RUB' }: Prop) => {
+    const { tickets, error, loading } = useTypedSelector(
+        (state: RootState) => state.ticket
     )
 
-    const { money, moneyerror, moneyloading } = useTypedSelector(
+    const { money, moneyError, moneyLoading } = useTypedSelector(
         (state: RootState) => state.money
     )
-    const USD = money as OnlyStrings
-    const { fetchUsers } = useActions()
+    const USD = money as IntMoney
+    const { fetchTickets } = useActions()
     const { fetchMoney } = useActionsMoney()
-    console.log(USD.RUB)
+    
     useEffect(() => {
         fetchMoney()
-    }, [])
-    useEffect(() => {
-        fetchUsers()
+        fetchTickets()
     }, [])
 
-    if (moneyloading) {
+    if ((moneyLoading)||(loading)) {
         return <h1>Loading</h1>
     }
-    if (moneyerror) {
-        return <h1>{moneyerror}</h1>
-    }
-    if (loading) {
-        return <h1>Loading</h1>
-    }
-    if (error) {
+    if ((moneyError)||error) {
         return <h1>{error}</h1>
     }
-    console.log(moneys)
-    if (i == '' || i == '-1') {
-        users.sort((obj1: { price: string }, obj2: { price: string }) =>
+
+    if (stopsprops == -1) {
+        tickets.sort((obj1, obj2) =>
             obj1.price > obj2.price ? 1 : -1
         )
     } else {
-        users.sort((obj1: { price: string }, obj2: { price: string }) =>
+        tickets.sort((obj1, obj2) =>
             obj1.price > obj2.price ? 1 : -1
         )
-        // console.log(money.moneys)
-        const g = users.filter((ticket) => ticket.stops == i)
+
+         const g = tickets.filter((ticket) => ticket.stops == stopsprops)
         return (
-            <ul>
-                {g.map((user: any, ind) => (
-                    // eslint-disable-next-line react/jsx-key
-                    <li key={ind} style={{ listStyleType: 'none' }}>
-                        <TicketsRender
-                            origin={user.origin}
-                            origin_name={user.origin_name}
-                            destination={user.destination}
-                            destination_name={user.destination_name}
-                            departure_date={user.departure_date}
-                            departure_time={user.departure_time}
-                            arrival_date={user.arrival_date}
-                            arrival_time={user.arrival_time}
-                            carrier={user.carrier}
-                            stops={user.stops}
-                            price={user.price}
-                            rate={USD[moneys]}
-                            moneys={moneys}
-                        />
-                    </li>
-                ))}
-            </ul>
+               <ul>
+                   {g.map((ticket,ind)=>
+
+                       <li key={ind} style={{listStyleType:'none'}}>
+                       <TicketsRender ticket={ticket} curs = {USD[moneys]} cursName={moneys}/>
+                       </li>
+ 
+                    )}
+               </ul>
+               
         )
     }
 
-    //  const g = users.forEach((item)=>{item.price = item.price*USD[moneys]
-    //     return (+item.price).toFixed(0) })
+   
     return (
         <ul>
-            {users.map((user: any, ind) => (
-                // eslint-disable-next-line react/jsx-key
-                <li key={ind} style={{ listStyleType: 'none' }}>
-                    <TicketsRender
-                        origin={user.origin}
-                        origin_name={user.origin_name}
-                        destination={user.destination}
-                        destination_name={user.destination_name}
-                        departure_date={user.departure_date}
-                        departure_time={user.departure_time}
-                        arrival_date={user.arrival_date}
-                        arrival_time={user.arrival_time}
-                        carrier={user.carrier}
-                        stops={user.stops}
-                        price={user.price}
-                        rate={USD[moneys]}
-                        moneys={moneys}
-                    />
-                </li>
-            ))}
-        </ul>
+        {tickets.map((ticket,ind)=>
+            <li key={ind} style={{listStyleType:'none'}}>
+            <TicketsRender ticket={ticket} curs = {USD[moneys]} cursName={moneys}/>
+            </li>
+
+         )}
+    </ul>
+           
     )
 }
 export default Ticket

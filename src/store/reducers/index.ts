@@ -1,8 +1,9 @@
 import { combineReducers, createStore } from 'redux'
-import { moneyReducer, userReducer } from './userReducer'
+import { ticketReducer } from './ticketReducer'
+import { moneyReducer } from './moneyReducer'
 
 export const rootReducer = combineReducers({
-    user: userReducer,
+    ticket: ticketReducer,
     money: moneyReducer,
 })
 

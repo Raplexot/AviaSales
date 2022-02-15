@@ -1,22 +1,22 @@
 /* eslint-disable max-len */
 import axios from 'axios'
 import { Dispatch } from 'react'
-import { UserAction, UserActionTypes } from '../../types/users'
+import { TicketAction, TicketActionTypes } from '../../types/tickets'
 
-export const fetchUsers = () => {
-    return async (dispatch: Dispatch<UserAction>) => {
+export const fetchTickets = () => {
+    return async (dispatch: Dispatch<TicketAction>) => {
         try {
-            dispatch({ type: UserActionTypes.FETCH_USERS })
+            dispatch({ type: TicketActionTypes.FETCH_TICKETS })
             const response = await axios.get(
                 'https://raw.githubusercontent.com/BrowningForce/aviasales-react/master/tickets.json'
             )
             dispatch({
-                type: UserActionTypes.FETCH_USERS_SUCCESS,
+                type: TicketActionTypes.FETCH_TICKETS_SUCCESS,
                 payload: response.data.tickets,
             })
         } catch (e) {
             dispatch({
-                type: UserActionTypes.FETCH_USERS_ERROR,
+                type: TicketActionTypes.FETCH_TICKETS_ERROR,
                 payload: 'Error of dounload',
             })
         }

@@ -2,49 +2,29 @@
 /* eslint-disable max-len */
 import { FC, useState } from 'react'
 import './TicketRender.css'
-import Tick from '/home/smiss-user46/Avia-Sales/my-app/src/images/Tick.png'
-import Arrow from '/home/smiss-user46/Avia-Sales/my-app/src/images/arrow.png'
+import Tick from '../../images/Tick.png'
+import Arrow from '../../images/arrow.png'
 import FirstModal from './firstModal'
 import SecondModal from './secondModal'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import React from 'react'
+import {IntTicket} from '../../types/tickets'
 
-interface Props {
-    origin: object
-    origin_name: object
-    destination: object
-    destination_name: object
-    departure_date: object
-    departure_time: object
-    arrival_date: object
-    arrival_time: object
-    carrier: object
-    stops: object
-    price: number
-    rate: number
-    moneys: string
+interface IntTickets {
+    ticket: IntTicket,
+    curs : number,
+    cursName:string
 }
 
 const TicketsRender = ({
-    origin = {},
-    origin_name = {},
-    destination = {},
-    destination_name = {},
-    departure_date = {},
-    departure_time = {},
-    arrival_date = {},
-    arrival_time = {},
-    carrier = {},
-    stops = {},
-    price = 0,
-    rate = 0,
-    moneys = 'RUB',
-}: Props) => {
+ticket,
+curs=0,
+cursName=''
+}: IntTickets) => {
     const [isModal, setModal] = useState(false)
     const [modal1, setmodal1] = useState(false)
     const onClose = () => {
-        console.log(formik.touched)
         if (formik.isValid && formik.dirty) {
             setmodal1(true)
         } else {
@@ -107,7 +87,7 @@ const TicketsRender = ({
                                     className="Buy"
                                 >
                                     Buy only for ..
-                                    {(price * rate).toFixed(0) + moneys}{' '}
+                                    {(ticket.price * curs).toFixed(0) + cursName}{' '}
                                 </button>
                                 <FirstModal
                                     visible={isModal}
@@ -236,15 +216,15 @@ const TicketsRender = ({
                     <div className="Info">
                         <div className="Start">
                             <div className="Departure-time">
-                                {departure_time}
+                                {ticket.departure_time}
                             </div>
-                            <div className="Origin-name">{origin_name}</div>
+                            <div className="Origin-name">{ticket.origin_name}</div>
                             <div className="Departure-date">
-                                {departure_date}
+                                {ticket.departure_date}
                             </div>
                         </div>
                         <div className="Stop">
-                            <div className="Stops">{stops} stops</div>
+                            <div className="Stops">{ticket.stops} stops</div>
                             <div>
                                 <img
                                     className="Arrow"
@@ -258,11 +238,11 @@ const TicketsRender = ({
                             </div>
                         </div>
                         <div className="Finish">
-                            <div className="Arrival-time">{arrival_time}</div>
+                            <div className="Arrival-time">{ticket.arrival_time}</div>
                             <div className="Destination-name">
-                                {destination_name}
+                                {ticket.destination_name}
                             </div>
-                            <div className="Arrival-date">{arrival_date}</div>
+                            <div className="Arrival-date">{ticket.arrival_date}</div>
                         </div>
                     </div>
                 </div>

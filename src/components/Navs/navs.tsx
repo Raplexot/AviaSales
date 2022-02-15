@@ -3,7 +3,7 @@ import './navs.css'
 import Ticket from '../Ticket/Ticket'
 
 export const Nav = (): ReactElement => {
-    const [stops, setStops] = useState('-1')
+    const [stops, setStops] = useState(-1)
     const [money, setMoney] = useState('RUB')
     return (
         <div className="Boxes">
@@ -26,34 +26,34 @@ export const Nav = (): ReactElement => {
                     <button
                         className="btn btn-info"
                         type="submit"
-                        onClick={() => setStops('-1')}
+                        onClick={() => setStops(-1)}
                     >
-                        {' '}
+                       
                         All
                     </button>
 
                     <button
                         className="btn btn-info"
                         type="submit"
-                        onClick={() => setStops('0')}
+                        onClick={() => setStops(0)}
                     >
-                        {' '}
+                        
                         No transfers
                     </button>
 
                     <button
                         className="btn btn-info"
                         type="submit"
-                        onClick={() => setStops('1')}
+                        onClick={() => setStops(1)}
                     >
-                        {' '}
+                        
                         1 transfer
                     </button>
 
                     <button
                         className="btn btn-info"
                         type="submit"
-                        onClick={() => setStops('2')}
+                        onClick={() => setStops(2)}
                     >
                         2 transfers
                     </button>
@@ -61,7 +61,7 @@ export const Nav = (): ReactElement => {
                     <button
                         type="submit"
                         className="btn btn-info"
-                        onClick={() => setStops('3')}
+                        onClick={() => setStops(3)}
                     >
                         3 transfers
                     </button>
@@ -69,7 +69,7 @@ export const Nav = (): ReactElement => {
             </div>
 
             <div>
-                <Ticket i={stops} moneys={money} />
+                <Ticket stopsprops={stops} moneys={money} />
             </div>
         </div>
     )

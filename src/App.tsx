@@ -10,7 +10,6 @@ const App: FC = () => {
             <Header />
             <div className="Global">
                 <Nav />
-                {/* <Ticket /> */}
             </div>
         </>
     )
