@@ -64,7 +64,7 @@ const TicketsRender = ({ ticket, curs = 0, cursName = '' }: IntTickets) => {
                 )
                 .required('Required'),
         }),
-        onSubmit: (values) => {
+        onSubmit: () => {
             if (formik.isValid) setmodal1(true)
         },
     })
@@ -76,15 +76,19 @@ const TicketsRender = ({ ticket, curs = 0, cursName = '' }: IntTickets) => {
                     <div className="Buttn">
                         <img src={Tick} alt="Ticket"></img>
                         <div>
-                            <React.Fragment>
+                            <>
                                 <button
                                     id="show-modal"
                                     onClick={() => setModal(true)}
                                     className="Buy"
                                 >
-                                    Buy only for ..
-                                    {(ticket.price * curs).toFixed(0) +
-                                        cursName}{' '}
+                                    Buy only for :
+                                    <span>
+                                        {' ' +
+                                            (ticket.price * curs).toFixed(0) +
+                                            ' ' +
+                                            cursName}{' '}
+                                    </span>
                                 </button>
                                 <FirstModal
                                     visible={isModal}
@@ -207,7 +211,7 @@ const TicketsRender = ({ ticket, curs = 0, cursName = '' }: IntTickets) => {
                                     footer={<div></div>}
                                     onClose1={onClose1}
                                 />
-                            </React.Fragment>
+                            </>
                         </div>
                     </div>
                     <div className="Info">
@@ -227,10 +231,6 @@ const TicketsRender = ({ ticket, curs = 0, cursName = '' }: IntTickets) => {
                             <div>
                                 <img
                                     className="Arrow"
-                                    style={{
-                                        height: 50,
-                                        textAlign: 'center',
-                                    }}
                                     src={Arrow}
                                     alt="Arrow"
                                 ></img>

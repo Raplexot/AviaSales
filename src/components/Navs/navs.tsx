@@ -21,7 +21,7 @@ export const Nav = (): ReactElement => {
                     </button>
                 </div>
                 <h1 className="Title">Quantity of transfers</h1>
-
+                
                 <div className="Checks">
                     <button
                         className="btn btn-info"
@@ -30,7 +30,6 @@ export const Nav = (): ReactElement => {
                     >
                         All
                     </button>
-
                     <button
                         className="btn btn-info"
                         type="submit"

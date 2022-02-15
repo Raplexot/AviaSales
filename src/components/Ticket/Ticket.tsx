@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
 import TicketsRender from '../Render/TicketsRender'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
-import { fetchTickets } from '../../store/action-creator/ticket'
 import { useActions, useActionsMoney } from '../../hooks/useActions'
 import { RootState } from '../../store/reducers'
-import { fetchMoney } from '../../store/action-creator/money'
+
 import { IntMoney } from '../../types/tickets'
 
 interface Prop {

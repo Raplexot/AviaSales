@@ -3,7 +3,6 @@ import { Nav } from './components/Navs/navs'
 import './App.css'
 import Header from './components/Header/Header'
 
-
 const App: FC = () => {
     return (
         <>
