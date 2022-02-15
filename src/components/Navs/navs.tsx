@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react'
+import React, { ReactElement, useState } from 'react'
 import './navs.css'
 import Ticket from '../Ticket/Ticket'
 
@@ -28,7 +28,6 @@ export const Nav = (): ReactElement => {
                         type="submit"
                         onClick={() => setStops(-1)}
                     >
-                       
                         All
                     </button>
 
@@ -37,7 +36,6 @@ export const Nav = (): ReactElement => {
                         type="submit"
                         onClick={() => setStops(0)}
                     >
-                        
                         No transfers
                     </button>
 
@@ -46,7 +44,6 @@ export const Nav = (): ReactElement => {
                         type="submit"
                         onClick={() => setStops(1)}
                     >
-                        
                         1 transfer
                     </button>
 

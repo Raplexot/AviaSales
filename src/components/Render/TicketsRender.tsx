@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable max-len */
-import { FC, useState } from 'react'
+import { useState } from 'react'
 import './TicketRender.css'
 import Tick from '../../images/Tick.png'
 import Arrow from '../../images/arrow.png'
@@ -9,19 +9,15 @@ import SecondModal from './secondModal'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import React from 'react'
-import {IntTicket} from '../../types/tickets'
+import { IntTicket } from '../../types/tickets'
 
 interface IntTickets {
-    ticket: IntTicket,
-    curs : number,
-    cursName:string
+    ticket: IntTicket
+    curs: number
+    cursName: string
 }
 
-const TicketsRender = ({
-ticket,
-curs=0,
-cursName=''
-}: IntTickets) => {
+const TicketsRender = ({ ticket, curs = 0, cursName = '' }: IntTickets) => {
     const [isModal, setModal] = useState(false)
     const [modal1, setmodal1] = useState(false)
     const onClose = () => {
@@ -87,7 +83,8 @@ cursName=''
                                     className="Buy"
                                 >
                                     Buy only for ..
-                                    {(ticket.price * curs).toFixed(0) + cursName}{' '}
+                                    {(ticket.price * curs).toFixed(0) +
+                                        cursName}{' '}
                                 </button>
                                 <FirstModal
                                     visible={isModal}
@@ -218,7 +215,9 @@ cursName=''
                             <div className="Departure-time">
                                 {ticket.departure_time}
                             </div>
-                            <div className="Origin-name">{ticket.origin_name}</div>
+                            <div className="Origin-name">
+                                {ticket.origin_name}
+                            </div>
                             <div className="Departure-date">
                                 {ticket.departure_date}
                             </div>
@@ -238,11 +237,15 @@ cursName=''
                             </div>
                         </div>
                         <div className="Finish">
-                            <div className="Arrival-time">{ticket.arrival_time}</div>
+                            <div className="Arrival-time">
+                                {ticket.arrival_time}
+                            </div>
                             <div className="Destination-name">
                                 {ticket.destination_name}
                             </div>
-                            <div className="Arrival-date">{ticket.arrival_date}</div>
+                            <div className="Arrival-date">
+                                {ticket.arrival_date}
+                            </div>
                         </div>
                     </div>
                 </div>

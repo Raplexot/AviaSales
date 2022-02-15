@@ -1,196 +1,196 @@
 .Button-holder {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
 }
 
 .B:hover {
-  /* text-shadow: 0 0 5px lightgray,0 0 5px lightgray,0 0 5px lightgray,0 0 5px lightgray; */
-  background-color: rgba(208, 250, 250, 0.835);
-  border-color: #2196f3;
+    /* text-shadow: 0 0 5px lightgray,0 0 5px lightgray,0 0 5px lightgray,0 0 5px lightgray; */
+    background-color: rgba(208, 250, 250, 0.835);
+    border-color: #2196f3;
 }
 
 .B:first-child:hover {
-  /* text-shadow: 0 0 5px lightgray,0 0 5px lightgray,0 0 5px lightgray,0 0 5px lightgray; */
-  background-color: rgba(208, 250, 250, 0.835);
-  border-color: #2196f3;
+    /* text-shadow: 0 0 5px lightgray,0 0 5px lightgray,0 0 5px lightgray,0 0 5px lightgray; */
+    background-color: rgba(208, 250, 250, 0.835);
+    border-color: #2196f3;
 }
 
 .B:last-child:hover {
-  /* text-shadow: 0 0 5px lightgray,0 0 5px lightgray,0 0 5px lightgray,0 0 5px lightgray; */
-  background-color: rgba(208, 250, 250, 0.835);
-  border-color: #2196f3;
+    /* text-shadow: 0 0 5px lightgray,0 0 5px lightgray,0 0 5px lightgray,0 0 5px lightgray; */
+    background-color: rgba(208, 250, 250, 0.835);
+    border-color: #2196f3;
 }
 
 .B:focus {
-  color: whitesmoke;
-  background-color: #2196f3;
-  border-color: #2196f3;
+    color: whitesmoke;
+    background-color: #2196f3;
+    border-color: #2196f3;
 }
 
 .B:first-child:focus {
-  color: whitesmoke;
-  background-color: #2196f3;
-  border-color: #2196f3;
+    color: whitesmoke;
+    background-color: #2196f3;
+    border-color: #2196f3;
 }
 
 .B:last-child:focus {
-  color: whitesmoke;
-  background-color: #2196f3;
-  border-color: #2196f3;
+    color: whitesmoke;
+    background-color: #2196f3;
+    border-color: #2196f3;
 }
 
 .B:first-child {
-  padding: 10px 20px;
-  color: #2196f3;
-  font-size: 40px;
-  background-color: white;
-  border-color: grey;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
+    padding: 10px 20px;
+    color: #2196f3;
+    font-size: 40px;
+    background-color: white;
+    border-color: grey;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
 }
 
 .B {
-  padding: 10px 20px;
-  color: #2196f3;
-  border-color: grey;
-  font-size: 40px;
-  background-color: white;
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
+    padding: 10px 20px;
+    color: #2196f3;
+    border-color: grey;
+    font-size: 40px;
+    background-color: white;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
 }
 
 .B:last-child {
-  padding: 10px 20px;
-  border-color: grey;
-  color: #2196f3;
-  background-color: white;
-  font-size: 40px;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
+    padding: 10px 20px;
+    border-color: grey;
+    color: #2196f3;
+    background-color: white;
+    font-size: 40px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
 }
 
 .Checks {
-  font-size: 20px;
-  padding: 15px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+    font-size: 20px;
+    padding: 15px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 
 .container1 {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* Hide the browser's default checkbox */
 .container1 input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
 /* Create a custom checkbox */
 .checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #c8c4c4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #c8c4c4;
 }
 
 /* On mouse-over, add a grey background color */
 .container1:hover input ~ .checkmark {
-  background-color: #ccc;
+    background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
 .container1 input:checked ~ .checkmark {
-  background-color: #2196f3;
+    background-color: #2196f3;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-  content: '';
-  position: absolute;
-  display: none;
+    content: '';
+    position: absolute;
+    display: none;
 }
 
 /* Show the checkmark when checked */
 .container1 input:checked ~ .checkmark:after {
-  display: block;
+    display: block;
 }
 
 /* Style the checkmark/indicator */
 .container1 .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .container {
-  padding: 15px;
-  background-color: #ffffff;
-  display: inline-block;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  -webkit-box-shadow: 3px 5px 5px 0px black;
-          box-shadow: 3px 5px 5px 0px black;
-  max-height: 800px;
-  min-height: 800px;
-  max-width: 400px;
-  min-width: 400px;
+    padding: 15px;
+    background-color: #ffffff;
+    display: inline-block;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-box-shadow: 3px 5px 5px 0px black;
+    box-shadow: 3px 5px 5px 0px black;
+    max-height: 800px;
+    min-height: 800px;
+    max-width: 400px;
+    min-width: 400px;
 }
 
 .Title {
-  padding-top: 20;
+    padding-top: 20;
 }
 
 .Boxes {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 .checkmar {
-  width: 15px;
+    width: 15px;
 }
 
 .btn {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 /*# sourceMappingURL=navs.css.map */

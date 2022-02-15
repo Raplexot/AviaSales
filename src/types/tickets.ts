@@ -10,8 +10,8 @@ export interface MoneyState {
     moneyError: null | string
 }
 
-export type IntMoney={
-    [key:string]:number;
+export type IntMoney = {
+    [key: string]: number
 }
 
 export enum TicketActionTypes {
@@ -60,10 +60,7 @@ export type TicketAction =
     | FetchTicketsErrorAction
     | FetchTicketsSuccessAction
 
-
-   
-
-export interface IntTicket{
+export interface IntTicket {
     origin: string
     origin_name: string
     destination: string
@@ -77,6 +74,4 @@ export interface IntTicket{
     price: number
 }
 
-
-    type IntTickets= IntTicket[]
-        
+type IntTickets = IntTicket[]
