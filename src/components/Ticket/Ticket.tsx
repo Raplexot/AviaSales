@@ -11,19 +11,23 @@ interface Prop {
     moneys: string
 }
 
+type OnlyStrings={
+    [key:string]:number;
+};
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const Ticket = ({ i = '', moneys = 'RUB' }: Prop) => {
     const { users, error, loading } = useTypedSelector(
         (state: RootState) => state.user
     )
+    
     const { money, moneyerror, moneyloading } = useTypedSelector(
         (state: RootState) => state.money
     )
-
+const USD = money as OnlyStrings;
     const { fetchUsers } = useActions()
     const { fetchMoney } = useActionsMoney()
-    console.log(money)
+    console.log(USD.RUB)
     useEffect(() => {
         fetchMoney()
         
@@ -45,22 +49,17 @@ const Ticket = ({ i = '', moneys = 'RUB' }: Prop) => {
         return <h1>{error}</h1>
     }
     console.log(moneys)
-    if (i == '') {
+    if ((i == '')||(i=='-1')) {
         users.sort((obj1: { price: string }, obj2: { price: string }) =>
             obj1.price > obj2.price ? 1 : -1
         )
     }
-    if (i == '-1') {
+    else {
         users.sort((obj1: { price: string }, obj2: { price: string }) =>
             obj1.price > obj2.price ? 1 : -1
         )
-    } else {
-        users.sort((obj1: { price: string }, obj2: { price: string }) =>
-            obj1.price > obj2.price ? 1 : -1
-        )
-
+// console.log(money.moneys)
         const g = users.filter((ticket) => ticket.stops == i)
-        //   const m = g.map((item)=>{item.price = item.price/item.price*item.price})
         return (
             <ul>
                 {g.map((user: any) => (
@@ -78,18 +77,22 @@ const Ticket = ({ i = '', moneys = 'RUB' }: Prop) => {
                             carrier={user.carrier}
                             stops={user.stops}
                             price={user.price}
+                            rate = {USD[moneys]}
+                            moneys ={moneys}
+
                         />
                     </li>
                 ))}
             </ul>
         )
     }
-    console.log()
-    //  const m = users.map((item)=>{item.price = item.price/item.price*money[moneys.toUpperCase()]*item.price})
-    // console.log(money.rates[moneys.toUpperCase()])
+
+
+    //  const g = users.forEach((item)=>{item.price = item.price*USD[moneys]
+    //     return (+item.price).toFixed(0) })
     return (
         <ul>
-            {users.map((user: any) => (
+            {users.map((user: any, ind) => (
                 // eslint-disable-next-line react/jsx-key
                 <li style={{ listStyleType: 'none' }}>
                     <TicketsRender
@@ -104,6 +107,8 @@ const Ticket = ({ i = '', moneys = 'RUB' }: Prop) => {
                         carrier={user.carrier}
                         stops={user.stops}
                         price={user.price}
+                        rate = {USD[moneys]}
+                        moneys ={moneys}
                     />
                 </li>
             ))}

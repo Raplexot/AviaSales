@@ -7,11 +7,11 @@ export const fetchMoney = () => {
         try {
             dispatch({ type: MoneyActionTypes.FETCH_MONEY })
             const response = await axios.get(
-                "https://freecurrencyapi.net/api/v2/latest?apikey=YOUR-APIKEY"
+                "https://open.er-api.com/v6/latest/RUB"
             )
             dispatch({
                 type: MoneyActionTypes.FETCH_MONEY_SUCCESS,
-                payload: response.data.data,
+                payload: response.data.rates,
             })
         } catch (e) {
             dispatch({

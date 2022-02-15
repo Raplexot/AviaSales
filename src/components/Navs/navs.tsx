@@ -4,7 +4,7 @@ import Ticket from '../Ticket/Ticket'
 
 export const Nav = (): ReactElement => {
     const [stops, setStops] = useState('-1')
-    const [money, setMoney] = useState('Rub')
+    const [money, setMoney] = useState('RUB')
     return (
         <div className="Boxes">
             <div className="container">

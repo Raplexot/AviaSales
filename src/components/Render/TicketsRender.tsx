@@ -21,7 +21,9 @@ interface Props {
     arrival_time: object
     carrier: object
     stops: object
-    price: object
+    price: number
+    rate:number
+    moneys:string
 }
 
 const TicketsRender = ({
@@ -35,7 +37,9 @@ const TicketsRender = ({
     arrival_time = {},
     carrier = {},
     stops = {},
-    price = {},
+    price = 0,
+    rate=0,
+    moneys='RUB'
 }: Props) => {
     const [isModal, setModal] = useState(false)
     const [modal1, setmodal1] = useState(false)
@@ -102,7 +106,8 @@ const TicketsRender = ({
                                     onClick={() => setModal(true)}
                                     className="Buy"
                                 >
-                                    Buy only for ..{price}
+                                    Buy only for ..{(price*rate).toFixed(0)+moneys}
+                                    
                                     <FirstModal
                                         visible={isModal}
                                         title={
