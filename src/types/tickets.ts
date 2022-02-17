@@ -1,13 +1,21 @@
 export interface TicketState {
     tickets: IntTickets
+    stops: Array<number>
     loading: boolean
     error: null | string
+}
+export interface stopsState {
+    stops: IntStops
 }
 
 export interface MoneyState {
     money: IntMoney
     moneyLoading: boolean
     moneyError: null | string
+}
+
+export interface MoneyCursState {
+    moneyCurs: string
 }
 
 export type IntMoney = {
@@ -19,6 +27,24 @@ export enum TicketActionTypes {
     FETCH_TICKETS_SUCCESS = 'FETCH_TICKETS_SUCCESS',
     FETCH_TICKETS_ERROR = 'FETCH_TICKETS_ERROR',
 }
+export enum StopsActionType {
+    DO_STOPS = 'DO_STOPS',
+}
+
+export enum MoneyCursActionType {
+    DO_MONEY = 'DO_MONEY',
+}
+
+export interface cursAction {
+    type: MoneyCursActionType.DO_MONEY
+    payload: string
+}
+type IntStops = Array<number>
+
+export interface stopsAction {
+    type: StopsActionType.DO_STOPS
+    payload: IntStops
+}
 
 interface FetchTicketsAction {
     type: TicketActionTypes.FETCH_TICKETS
@@ -26,10 +52,17 @@ interface FetchTicketsAction {
 interface FetchTicketsSuccessAction {
     type: TicketActionTypes.FETCH_TICKETS_SUCCESS
     payload: IntTickets
+    stopsprops: Array<number>
+}
+interface FetchTicketsSuccessAction {
+    type: TicketActionTypes.FETCH_TICKETS_SUCCESS
+    payload: IntTickets
+    stopsprops: Array<number>
 }
 interface FetchTicketsErrorAction {
     type: TicketActionTypes.FETCH_TICKETS_ERROR
     payload: string
+    stopsprops: Array<number>
 }
 
 export enum MoneyActionTypes {
@@ -44,6 +77,7 @@ interface FetchMoneyAction {
 interface FetchMoneySuccessAction {
     type: MoneyActionTypes.FETCH_MONEY_SUCCESS
     payload: IntMoney
+    moneyCurs: string
 }
 interface FetchMoneyErrorAction {
     type: MoneyActionTypes.FETCH_MONEY_ERROR
