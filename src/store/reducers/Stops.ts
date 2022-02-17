@@ -1,7 +1,7 @@
 import { StopsActionType, stopsState, stopsAction } from '../../types/tickets'
 
 const initialState: stopsState = {
-    stops: [],
+    stops: [0],
 }
 
 export const stopsReducer = (
@@ -10,7 +10,11 @@ export const stopsReducer = (
 ): stopsState => {
     switch (action.type) {
         case StopsActionType.DO_STOPS:
-            return { stops: action.payload }
+            return {
+                stops: state.stops.includes(action.payload)
+                    ? state.stops.filter((el) => el !== action.payload)
+                    : [...state.stops, action.payload],
+            }
         default:
             return state
     }

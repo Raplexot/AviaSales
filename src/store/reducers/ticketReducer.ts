@@ -6,7 +6,6 @@ import {
 
 const initialState: TicketState = {
     tickets: [],
-    stops: [],
     loading: false,
     error: null,
 }
@@ -17,14 +16,13 @@ export const ticketReducer = (
 ): TicketState => {
     switch (action.type) {
         case TicketActionTypes.FETCH_TICKETS:
-            return { loading: true, error: null, tickets: [], stops: [] }
+            return { loading: true, error: null, tickets: [] }
 
         case TicketActionTypes.FETCH_TICKETS_SUCCESS:
             return {
                 loading: false,
                 error: null,
                 tickets: action.payload,
-                stops: action.stopsprops,
             }
 
         case TicketActionTypes.FETCH_TICKETS_ERROR:
@@ -32,7 +30,6 @@ export const ticketReducer = (
                 loading: false,
                 error: action.payload,
                 tickets: [],
-                stops: [],
             }
 
         default:

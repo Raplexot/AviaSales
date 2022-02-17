@@ -14,6 +14,7 @@ export const moneyCursReducer = (
     switch (action.type) {
         case MoneyCursActionType.DO_MONEY:
             return { moneyCurs: action.payload }
+
         default:
             return state
     }

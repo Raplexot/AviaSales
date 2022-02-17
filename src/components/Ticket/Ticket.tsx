@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import TicketsRender from '../Render/TicketsRender'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
 import { useActions, useActionsMoney } from '../../hooks/useActions'
@@ -6,8 +6,7 @@ import { RootState } from '../../store/reducers'
 
 import { IntMoney } from '../../types/tickets'
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const Ticket = () => {
+const Ticket = (): JSX.Element => {
     const { tickets, error, loading } = useTypedSelector(
         (state: RootState) => state.ticket
     )
@@ -21,20 +20,29 @@ const Ticket = () => {
     const { fetchMoney } = useActionsMoney()
     useEffect(() => {
         fetchMoney(Curs.moneyCurs)
-        fetchTickets(stops.stops)
-        tickets.sort((obj1, obj2) => (obj1.price > obj2.price ? 1 : -1))
-    }, [stops])
+        fetchTickets()
+        tickets.filter((ticket) => stops.stops.includes(ticket.stops))
+    }, [stops, Curs])
 
+    const Memo = useMemo(
+        () =>
+            stops.stops.includes(-1)
+                ? tickets
+                : tickets.filter((ticket) =>
+                      stops.stops.includes(ticket.stops)
+                  ),
+        [tickets]
+    )
     if (moneyLoading || loading) {
         return <h1>Loading</h1>
     }
     if (moneyError || error) {
-        return <h1>{error}</h1>
+        return <h1>{error && moneyError}</h1>
     }
 
     return (
         <ul>
-            {tickets.map((ticket, ind) => (
+            {Memo.map((ticket, ind) => (
                 <li key={ind} style={{ listStyleType: 'none' }}>
                     <TicketsRender
                         ticket={ticket}

@@ -1,12 +1,11 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable max-len */
-import { useState } from 'react'
 import './TicketRender.css'
 import Tick from '../../images/Tick.png'
 import Arrow from '../../images/arrow.png'
 import FormModal from './FormModal'
 import SuccessModal from './SuccessModal'
 import { IntTicket } from '../../types/tickets'
+import { useTypedSelector } from '../../hooks/useTypedSelector'
+import { useActionsModal } from '../../hooks/useActions'
 
 interface IntTickets {
     ticket: IntTicket
@@ -14,21 +13,25 @@ interface IntTickets {
     cursName: string
 }
 
-const TicketsRender = ({ ticket, curs = 0, cursName = '' }: IntTickets) => {
-    const [isFirstModal, setFirstModal] = useState(false)
-    const [isSecondModal, setSecondModal] = useState(false)
+const TicketsRender = ({
+    ticket,
+    curs = 0,
+    cursName = '',
+}: IntTickets): JSX.Element => {
+    const visible = useTypedSelector((state) => state.modal)
+    const { show } = useActionsModal()
 
     return (
         <div className="Set">
             <div className="ContainerT">
                 <div className="Contain">
                     <div className="Buttn">
-                        <img src={Tick} alt="Ticket"></img>
+                        <img src={Tick} alt="Ticket" />
                         <div>
                             <>
                                 <button
                                     id="show-modal"
-                                    onClick={() => setFirstModal(true)}
+                                    onClick={() => show(true, false)}
                                     className="Buy"
                                 >
                                     Buy only for :
@@ -39,16 +42,8 @@ const TicketsRender = ({ ticket, curs = 0, cursName = '' }: IntTickets) => {
                                             cursName}{' '}
                                     </span>
                                 </button>
-                                <FormModal
-                                    visible={isFirstModal}
-                                    closeFirstModal={setFirstModal}
-                                    closeSecondModal={setSecondModal}
-                                />
-                                <SuccessModal
-                                    visible={isSecondModal}
-                                    closeFirstModal={setFirstModal}
-                                    closeSecondModal={setSecondModal}
-                                />
+                                <FormModal visible={visible.formModal} />
+                                <SuccessModal visible={visible.successModal} />
                             </>
                         </div>
                     </div>
@@ -71,7 +66,7 @@ const TicketsRender = ({ ticket, curs = 0, cursName = '' }: IntTickets) => {
                                     className="Arrow"
                                     src={Arrow}
                                     alt="Arrow"
-                                ></img>
+                                />
                             </div>
                         </div>
                         <div className="Finish">

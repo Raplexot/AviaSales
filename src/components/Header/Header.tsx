@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import logo from '../../images/plane.png'
 import './Header.css'
 const Header: FC = () => {

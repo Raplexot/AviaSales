@@ -1,19 +1,14 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-import  {  useEffect } from 'react'
+import { useEffect } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import { useActionsModal } from '../../hooks/useActions'
 
 interface ModalProps {
     visible: boolean
-    closeFirstModal: (isFirstModal: boolean) => void
-    closeSecondModal: (isSecondModal: boolean) => void
 }
 
-const FormModal = ({
-    visible = false,
-    closeFirstModal,
-    closeSecondModal,
-}: ModalProps) => {
+const FormModal = ({ visible = false }: ModalProps): JSX.Element => {
+    const { show } = useActionsModal()
     const formik = useFormik({
         initialValues: {
             firstName: '',
@@ -21,8 +16,6 @@ const FormModal = ({
             email: '',
             pass: '',
             tel: '',
-            isSecondModal: false,
-            isFirstModal: false,
         },
         validationSchema: Yup.object({
             firstName: Yup.string()
@@ -51,10 +44,10 @@ const FormModal = ({
             console.log()
         },
     })
-    const onKeydown = ({ key }: KeyboardEvent) => {
+    const onKeydown = ({ key }: KeyboardEvent): void => {
         switch (key) {
             case 'Escape':
-                closeFirstModal(false)
+                show(false, false)
                 break
         }
     }
@@ -65,17 +58,17 @@ const FormModal = ({
     })
 
     // если компонент невидим, то не отображаем его
-    if (!visible) return null
+    if (!visible) return <></>
 
     // или возвращаем верстку модального окна
     return (
-        <div className="modal" onClick={() => closeFirstModal(false)}>
+        <div className="modal" onClick={() => show(false, false)}>
             <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
                 <div className="modal-header">
                     <h3 className="modal-title">Please enter info</h3>
                     <span
                         className="modal-close"
-                        onClick={() => closeFirstModal(false)}
+                        onClick={() => show(false, false)}
                     >
                         &times;
                     </span>
@@ -93,7 +86,7 @@ const FormModal = ({
                                         className="Email"
                                         type={'email'}
                                         placeholder="Enter Email"
-                                    ></input>
+                                    />
                                 </div>
                                 {formik.touched.email && formik.errors.email ? (
                                     <p className="ERR">{formik.errors.email}</p>
@@ -107,7 +100,7 @@ const FormModal = ({
                                         className="Phone"
                                         type={'tel'}
                                         placeholder="Enter Phone"
-                                    ></input>
+                                    />
                                 </div>
                                 {formik.touched.tel && formik.errors.tel ? (
                                     <p className="ERR">{formik.errors.tel}</p>
@@ -121,7 +114,7 @@ const FormModal = ({
                                         className="firstName"
                                         type={'text'}
                                         placeholder="Enter Name"
-                                    ></input>
+                                    />
                                 </div>
                                 {formik.touched.firstName &&
                                 formik.errors.firstName ? (
@@ -138,7 +131,7 @@ const FormModal = ({
                                         className="surName"
                                         type={'text'}
                                         placeholder="Enter Surname"
-                                    ></input>
+                                    />
                                 </div>
                                 {formik.touched.lastName &&
                                 formik.errors.lastName ? (
@@ -154,7 +147,7 @@ const FormModal = ({
                                         name="pass"
                                         type={'text'}
                                         placeholder="Enter passCode"
-                                    ></input>
+                                    />
                                 </div>
                                 {formik.touched.pass && formik.errors.pass ? (
                                     <p className="ERR">{formik.errors.pass}</p>
@@ -165,7 +158,7 @@ const FormModal = ({
                                     type="submit"
                                     onClick={
                                         formik.dirty && formik.isValid
-                                            ? () => closeSecondModal(true)
+                                            ? () => show(false, true)
                                             : () => alert('Complete all Fields')
                                     }
                                 >

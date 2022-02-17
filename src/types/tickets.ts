@@ -1,11 +1,15 @@
 export interface TicketState {
     tickets: IntTickets
-    stops: Array<number>
     loading: boolean
     error: null | string
 }
 export interface stopsState {
     stops: IntStops
+}
+
+export interface ModalState {
+    formModal: boolean
+    successModal: boolean
 }
 
 export interface MoneyState {
@@ -31,6 +35,11 @@ export enum StopsActionType {
     DO_STOPS = 'DO_STOPS',
 }
 
+export enum FormActionType {
+    ACTIVE_FORM = 'ACTIVE_FORM',
+    ACTIVE_SUCCESS = 'ACTIVE_SUCCESS',
+}
+
 export enum MoneyCursActionType {
     DO_MONEY = 'DO_MONEY',
 }
@@ -39,12 +48,26 @@ export interface cursAction {
     type: MoneyCursActionType.DO_MONEY
     payload: string
 }
-type IntStops = Array<number>
 
 export interface stopsAction {
     type: StopsActionType.DO_STOPS
-    payload: IntStops
+    payload: number
 }
+
+export interface modalAction {
+    type: FormActionType.ACTIVE_FORM
+    payload: boolean
+    payload1: boolean
+}
+export interface SuccessAction {
+    type: FormActionType.ACTIVE_SUCCESS
+    payload: boolean
+    payload1: boolean
+}
+
+export type ModalAction = SuccessAction | modalAction
+
+type IntStops = Array<number>
 
 interface FetchTicketsAction {
     type: TicketActionTypes.FETCH_TICKETS
@@ -52,17 +75,14 @@ interface FetchTicketsAction {
 interface FetchTicketsSuccessAction {
     type: TicketActionTypes.FETCH_TICKETS_SUCCESS
     payload: IntTickets
-    stopsprops: Array<number>
 }
 interface FetchTicketsSuccessAction {
     type: TicketActionTypes.FETCH_TICKETS_SUCCESS
     payload: IntTickets
-    stopsprops: Array<number>
 }
 interface FetchTicketsErrorAction {
     type: TicketActionTypes.FETCH_TICKETS_ERROR
     payload: string
-    stopsprops: Array<number>
 }
 
 export enum MoneyActionTypes {

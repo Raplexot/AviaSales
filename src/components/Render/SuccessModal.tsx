@@ -1,22 +1,18 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { useEffect } from 'react'
+import { useActionsModal } from '../../hooks/useActions'
 
 interface ModalProps1 {
     visible: boolean
-    closeFirstModal: (isFirstModal: boolean) => void
-    closeSecondModal: (isSecondModal: boolean) => void
 }
 
-const SuccessModal = ({
-    visible = false,
-    closeFirstModal,
-    closeSecondModal,
-}: ModalProps1) => {
+const SuccessModal = ({ visible = false }: ModalProps1): JSX.Element => {
+    const { show } = useActionsModal()
     // создаем обработчик нажатия клавиши Esc
-    const onKeydown = ({ key }: KeyboardEvent) => {
+
+    const onKeydown = ({ key }: KeyboardEvent): void => {
         switch (key) {
             case 'Escape':
-                closeSecondModal(false)
+                show(false, false)
                 break
         }
     }
@@ -26,15 +22,14 @@ const SuccessModal = ({
     })
 
     // если компонент невидим, то не отображаем его
-    if (!visible) return null
+    if (!visible) return <></>
 
     // или возвращаем верстку модального окна
     return (
         <div
             className="modal1"
             onClick={() => {
-                closeSecondModal(false)
-                closeFirstModal(false)
+                show(false, false)
             }}
         >
             <div className="modal-dialog1" onClick={(e) => e.stopPropagation()}>
@@ -42,7 +37,7 @@ const SuccessModal = ({
                     <h3 className="modal-title1">Success</h3>
                     <span
                         className="modal-close1"
-                        onClick={() => closeSecondModal(false)}
+                        onClick={() => show(false, false)}
                     >
                         &times;
                     </span>
