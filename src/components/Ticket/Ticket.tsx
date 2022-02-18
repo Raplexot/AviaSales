@@ -44,21 +44,19 @@ const Ticket = (): JSX.Element => {
     }
 
     return (
-        <>
+        <div className="AllTickets">
             {memo.map((ticket) => (
-                <div className='TicketAdapt'>
-
+                <div key={Math.random()} className="TicketAdapt">
                     <TicketsRender
                         ticket={ticket}
                         currency={money[currency.moneyCurrency]}
                         currencyName={currency.moneyCurrency}
-                        />
-                        </div>
-                
+                    />
+                </div>
             ))}
             <FormModal />
             <SuccessModal />
-        </>
+        </div>
     )
 }
 export default Ticket

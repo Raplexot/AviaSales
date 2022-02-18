@@ -6,24 +6,24 @@ import * as StopsActionCreators from '../store/action-creator/stops'
 import * as CurrencyActionCreators from '../store/action-creator/moneyCurrency'
 import * as ModalActionCreators from '../store/action-creator/modal'
 
-export const useActions = ():any => {
+export const useActions = (): any => {
     const dispatch = useDispatch()
     return bindActionCreators(TicketActionCreators, dispatch)
 }
 
-export const useActionsMoney = ():any  => {
+export const useActionsMoney = (): any => {
     const dispatch = useDispatch()
     return bindActionCreators(MoneyActionCreators, dispatch)
 }
-export const useActionsStops = ():any  => {
+export const useActionsStops = (): any => {
     const dispatch = useDispatch()
     return bindActionCreators(StopsActionCreators, dispatch)
 }
-export const useActionsModal = ():any  => {
+export const useActionsModal = (): any => {
     const dispatch = useDispatch()
     return bindActionCreators(ModalActionCreators, dispatch)
 }
-export const useActionsCurrency = ():any  => {
+export const useActionsCurrency = (): any => {
     const dispatch = useDispatch()
     return bindActionCreators(CurrencyActionCreators, dispatch)
 }

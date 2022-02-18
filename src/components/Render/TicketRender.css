@@ -1,711 +1,1093 @@
 @media (min-width: 1025px) and (max-width: 2100px) {
-  .modal {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 9998;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-            align-items: center;
-    box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
-            justify-content: center;
-    background-color: rgba(0, 0, 0, 0.25);
-    -webkit-animation-name: appear;
-            animation-name: appear;
-    -webkit-animation-duration: 300ms;
-            animation-duration: 300ms;
-  }
-  .modal .modal-dialog {
-    width: 100%;
-    max-width: 550px;
-    background: white;
-    position: relative;
-    margin: 0 20px;
-    max-height: calc(100vh - 40px);
-    text-align: left;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-orient: vertical;
-    box-direction: normal;
-    -ms-flex-direction: column;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
-    overflow: hidden;
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-animation-name: animatetop;
-            animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-            animation-duration: 0.4s;
-    -webkit-animation-name: slide-in;
-            animation-name: slide-in;
-    -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
-  }
-  .modal .modal-dialog .modal-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-            align-items: center;
-    padding: 1rem;
-  }
-  .modal .modal-dialog .modal-header .modal-title {
-    margin: 0px;
-  }
-  .modal .modal-dialog .modal-header .modal-close {
-    cursor: pointer;
-    padding: 1rem;
-    margin: -1rem -1rem -1rem auto;
-  }
-  .modal .modal-dialog .modal-footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-            align-items: center;
-    padding: 1rem;
-  }
-  .modal .modal-dialog .modal-body {
-    overflow: auto;
-  }
-  .modal .modal-dialog .modal-body .modal-content {
-    padding: 1rem;
-  }
-  .modal .modal-dialog .modal-body .modal-content .Enters {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-            align-items: center;
-    box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
-            justify-content: center;
-    box-orient: vertical;
-    box-direction: normal;
-    -ms-flex-direction: column;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
-  }
-  .modal .modal-dialog .modal-body .modal-content .Enters .ERR {
-    color: red;
-  }
-  .modal1 {
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    width: 100%;
-    z-index: 9999;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-            align-items: center;
-    box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
-            justify-content: center;
-    background-color: rgba(0, 0, 0, 0.25);
-    -webkit-animation-name: appear;
-            animation-name: appear;
-    -webkit-animation-duration: 300ms;
-            animation-duration: 300ms;
-  }
-  .modal1 .modal-dialog1 {
-    width: 100%;
-    max-width: 550px;
-    background: white;
-    position: relative;
-    margin: 0 20px;
-    max-height: calc(100vh - 40px);
-    text-align: left;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-orient: vertical;
-    box-direction: normal;
-    -ms-flex-direction: column;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
-    overflow: hidden;
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-animation-name: animatetop;
-            animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-            animation-duration: 0.4s;
-    -webkit-animation-name: slide-in;
-            animation-name: slide-in;
-    animation-name: slide-in;
-    -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
-    animation-duration: 0.5s;
-  }
-  .modal1 .modal-dialog1 .modal-header1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
+    .modal {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 9998;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.25);
+        -webkit-animation-name: appear;
+        animation-name: appear;
+        -webkit-animation-duration: 300ms;
+        animation-duration: 300ms;
+    }
+    .modal .modal-dialog {
+        width: 100%;
+        max-width: 550px;
+        background: white;
+        position: relative;
+        margin: 0 20px;
+        max-height: calc(100vh - 40px);
+        text-align: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-orient: vertical;
+        box-direction: normal;
+        -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        overflow: hidden;
+        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+        -webkit-animation-name: slide-in;
+        animation-name: slide-in;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+    }
+    .modal .modal-dialog .modal-header {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    .modal .modal-dialog .modal-header .modal-title {
+        margin: 0px;
+    }
+    .modal .modal-dialog .modal-header .modal-close {
+        cursor: pointer;
+        padding: 1rem;
+        margin: -1rem -1rem -1rem auto;
+    }
+    .modal .modal-dialog .modal-footer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    .modal .modal-dialog .modal-body {
+        overflow: auto;
+    }
+    .modal .modal-dialog .modal-body .modal-content {
+        padding: 1rem;
+    }
+    .modal .modal-dialog .modal-body .modal-content .Enters {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        box-orient: vertical;
+        box-direction: normal;
+        -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+    }
+    .modal .modal-dialog .modal-body .modal-content .Enters .ERR {
+        color: red;
+    }
+    .modal1 {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        width: 100%;
+        z-index: 9999;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.25);
+        -webkit-animation-name: appear;
+        animation-name: appear;
+        -webkit-animation-duration: 300ms;
+        animation-duration: 300ms;
+    }
+    .modal1 .modal-dialog1 {
+        width: 100%;
+        max-width: 550px;
+        background: white;
+        position: relative;
+        margin: 0 20px;
+        max-height: calc(100vh - 40px);
+        text-align: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-orient: vertical;
+        box-direction: normal;
+        -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        overflow: hidden;
+        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+        -webkit-animation-name: slide-in;
+        animation-name: slide-in;
+        animation-name: slide-in;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        animation-duration: 0.5s;
+    }
+    .modal1 .modal-dialog1 .modal-header1 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
         justify-content: space-around;
-    padding-left: 10px;
-    border-bottom: 1px solid #dbdbdb;
-    box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
-            justify-content: center;
-    background-color: aquamarine;
-    color: black;
-  }
-  .modal1 .modal-dialog1 .modal-header1 .modal-title1 {
-    margin-top: 5px;
-    text-align: center;
-  }
-  .modal1 .modal-dialog1 .modal-header1 .modal-close1 {
-    margin-left: 20px;
-    cursor: pointer;
-    padding: 1rem;
-  }
-  .ContainerT {
-    width: 100%;
-    display: inline-block;
-    box-orient: horizontal;
-    box-direction: normal;
-    -ms-flex-direction: row;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-            flex-direction: row;
-    margin-bottom: 25px;
-  }
-  .ContainerT .Contain {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-orient: horizontal;
-    box-direction: normal;
-    -ms-flex-direction: row;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-            flex-direction: row;
-  }
-  .ContainerT .Contain .Title1 {
-    display: inline-block;
-    text-align: center;
-  }
-  .ContainerT .Contain .Buttn {
-    width: 100%;
-    padding: 15px;
-    margin-left: 25px;
-    background-color: #ffffff;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    -webkit-box-shadow: 3px 5px 5px 0px black;
-            box-shadow: 3px 5px 5px 0px black;
-  }
-  .ContainerT .Contain .Buttn .Buy {
-    margin: 15px;
-    padding: 20px;
-    background-color: orange;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 10px;
-    max-width: 300px;
-    min-width: 300px;
-  }
-  .ContainerT .Contain .Info {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-orient: horizontal;
-    box-direction: normal;
-    -ms-flex-direction: row;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-            flex-direction: row;
-    padding: 15px;
-    background-color: #ffffff;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    -webkit-box-shadow: 3px 5px 5px 0px black;
-            box-shadow: 3px 5px 5px 0px black;
-    font-size: 20px;
-  }
-  .ContainerT .Contain .Info .Departure-time {
-    font-size: 35px;
-    padding-right: 10px;
-  }
-  .ContainerT .Contain .Info .Departure-date {
-    font-size: 20px;
-  }
-  .ContainerT .Contain .Info .Origin-name {
-    font-size: 20px;
-  }
-  .ContainerT .Contain .Info .Stop {
-    text-align: center;
-    opacity: 0.5;
-  }
-  .ContainerT .Contain .Info .Arrow {
-    height: 50px;
-    font-size: 0px;
-    text-align: center;
-  }
-  .ContainerT .Contain .Info .Arrival-time {
-    font-size: 35px;
-    padding-left: 10px;
-    text-align: right;
-  }
-  .ContainerT .Contain .Info .Destination-name {
-    font-size: 20px;
-    text-align: right;
-  }
-  .ContainerT .Contain .Info .Arrival-date {
-    font-size: 20px;
-    text-align: right;
-  }
-  @-webkit-keyframes appear {
-    from {
-      opacity: 0;
+        padding-left: 10px;
+        border-bottom: 1px solid #dbdbdb;
+        box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: aquamarine;
+        color: black;
     }
-    to {
-      opacity: 1;
+    .modal1 .modal-dialog1 .modal-header1 .modal-title1 {
+        margin-top: 5px;
+        text-align: center;
     }
-  }
-  @keyframes appear {
-    from {
-      opacity: 0;
+    .modal1 .modal-dialog1 .modal-header1 .modal-close1 {
+        margin-left: 20px;
+        cursor: pointer;
+        padding: 1rem;
     }
-    to {
-      opacity: 1;
+    .ContainerT {
+        width: 100%;
+        display: inline-block;
+        box-orient: horizontal;
+        box-direction: normal;
+        -ms-flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        margin-bottom: 25px;
     }
-  }
-  @keyframes appear {
-    from {
-      opacity: 0;
+    .ContainerT .Contain {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-orient: horizontal;
+        box-direction: normal;
+        -ms-flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
     }
-    to {
-      opacity: 1;
+    .ContainerT .Contain .Title1 {
+        display: inline-block;
+        text-align: center;
     }
-  }
-  @-webkit-keyframes slide-in {
-    from {
-      -webkit-transform: translateY(-150px);
-              transform: translateY(-150px);
-      transform: translateY(-150px);
+    .ContainerT .Contain .Buttn {
+        width: 100%;
+        margin: 0px;
+        padding: 15px;
+        margin-left: 25px;
+        background-color: #ffffff;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        -webkit-box-shadow: 3px 5px 5px 0px black;
+        box-shadow: 3px 5px 5px 0px black;
     }
-    to {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      transform: translateY(0);
+    .ContainerT .Contain .Buttn .Buy {
+        margin: 15px;
+        padding: 20px;
+        width: 300px;
+        background-color: orange;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 10px;
+        max-width: 300px;
     }
-  }
-  @keyframes slide-in {
-    from {
-      -webkit-transform: translateY(-150px);
-              transform: translateY(-150px);
-      transform: translateY(-150px);
+    .Info {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-orient: horizontal;
+        box-direction: normal;
+        -ms-flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        padding: 15px;
+        background-color: #ffffff;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        -webkit-box-shadow: 3px 5px 5px 0px black;
+        box-shadow: 3px 5px 5px 0px black;
+        font-size: 20px;
     }
-    to {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      transform: translateY(0);
+    .Info .Departure-time {
+        font-size: 20px;
+        padding-right: 10px;
     }
-  }
-  @keyframes slide-in {
-    from {
-      -webkit-transform: translateY(-150px);
-              transform: translateY(-150px);
-      transform: translateY(-150px);
+    .Info .Departure-date {
+        font-size: 20px;
     }
-    to {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      transform: translateY(0);
+    .Info .Origin-name {
+        font-size: 20px;
     }
-  }
+    .Info .Stop {
+        text-align: center;
+        opacity: 0.5;
+    }
+    .Info .Arrival-time {
+        font-size: 20px;
+        padding-left: 10px;
+        text-align: right;
+    }
+    .Info .Destination-name {
+        font-size: 20px;
+        text-align: right;
+    }
+    .Info .Arrival-date {
+        font-size: 20px;
+        text-align: right;
+    }
+    @-webkit-keyframes appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes slide-in {
+        from {
+            -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+            transform: translateY(-150px);
+        }
+        to {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+    @keyframes slide-in {
+        from {
+            -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+            transform: translateY(-150px);
+        }
+        to {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+    @keyframes slide-in {
+        from {
+            -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+            transform: translateY(-150px);
+        }
+        to {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+    .Arrow {
+        height: 50px;
+        font-size: 0px;
+        text-align: center;
+    }
 }
 
 @media (min-width: 500px) and (max-width: 900px) {
-  .modal {
-    width: 100%;
-    z-index: 9998;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-            align-items: center;
-    box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
-            justify-content: center;
-    background-color: rgba(0, 0, 0, 0.25);
-    -webkit-animation-name: appear;
-            animation-name: appear;
-    -webkit-animation-duration: 300ms;
-            animation-duration: 300ms;
-  }
-  .modal .modal-dialog {
-    width: 100%;
-    max-width: 550px;
-    background: white;
-    position: relative;
-    margin: 0 20px;
-    max-height: calc(100vh - 40px);
-    text-align: left;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-orient: vertical;
-    box-direction: normal;
-    -ms-flex-direction: column;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
-    overflow: hidden;
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-animation-name: animatetop;
-            animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-            animation-duration: 0.4s;
-    -webkit-animation-name: slide-in;
-            animation-name: slide-in;
-    -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
-  }
-  .modal .modal-dialog .modal-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-            align-items: center;
-    padding: 1rem;
-  }
-  .modal .modal-dialog .modal-header .modal-title {
-    margin: 0px;
-  }
-  .modal .modal-dialog .modal-header .modal-close {
-    cursor: pointer;
-    padding: 1rem;
-    margin: -1rem -1rem -1rem auto;
-  }
-  .modal .modal-dialog .modal-footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-            align-items: center;
-    padding: 1rem;
-  }
-  .modal .modal-dialog .modal-body {
-    overflow: auto;
-  }
-  .modal .modal-dialog .modal-body .modal-content {
-    padding: 1rem;
-  }
-  .modal .modal-dialog .modal-body .modal-content .Enters {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-            align-items: center;
-    box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
-            justify-content: center;
-    box-orient: vertical;
-    box-direction: normal;
-    -ms-flex-direction: column;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
-  }
-  .modal .modal-dialog .modal-body .modal-content .Enters .ERR {
-    color: red;
-  }
-  .modal1 {
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    width: 100%;
-    z-index: 9999;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-            align-items: center;
-    box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
-            justify-content: center;
-    background-color: rgba(0, 0, 0, 0.25);
-    -webkit-animation-name: appear;
-            animation-name: appear;
-    -webkit-animation-duration: 300ms;
-            animation-duration: 300ms;
-  }
-  .modal1 .modal-dialog1 {
-    width: 100%;
-    max-width: 550px;
-    background: white;
-    position: relative;
-    margin: 0 20px;
-    max-height: calc(100vh - 40px);
-    text-align: left;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-orient: vertical;
-    box-direction: normal;
-    -ms-flex-direction: column;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
-    overflow: hidden;
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-animation-name: animatetop;
-            animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-            animation-duration: 0.4s;
-    -webkit-animation-name: slide-in;
-            animation-name: slide-in;
-    animation-name: slide-in;
-    -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
-    animation-duration: 0.5s;
-  }
-  .modal1 .modal-dialog1 .modal-header1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
+    .modal {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 9998;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.25);
+        -webkit-animation-name: appear;
+        animation-name: appear;
+        -webkit-animation-duration: 300ms;
+        animation-duration: 300ms;
+    }
+    .modal .modal-dialog {
+        width: 100%;
+        max-width: 550px;
+        background: white;
+        position: relative;
+        margin: 0 20px;
+        max-height: calc(100vh - 40px);
+        text-align: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-orient: vertical;
+        box-direction: normal;
+        -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        overflow: hidden;
+        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+        -webkit-animation-name: slide-in;
+        animation-name: slide-in;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+    }
+    .modal .modal-dialog .modal-header {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    .modal .modal-dialog .modal-header .modal-title {
+        margin: 0px;
+    }
+    .modal .modal-dialog .modal-header .modal-close {
+        cursor: pointer;
+        padding: 1rem;
+        margin: -1rem -1rem -1rem auto;
+    }
+    .modal .modal-dialog .modal-footer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    .modal .modal-dialog .modal-body {
+        overflow: auto;
+    }
+    .modal .modal-dialog .modal-body .modal-content {
+        padding: 1rem;
+    }
+    .modal .modal-dialog .modal-body .modal-content .Enters {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        box-orient: vertical;
+        box-direction: normal;
+        -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+    }
+    .modal .modal-dialog .modal-body .modal-content .Enters .ERR {
+        color: red;
+    }
+    .modal1 {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        width: 100%;
+        z-index: 9999;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.25);
+        -webkit-animation-name: appear;
+        animation-name: appear;
+        -webkit-animation-duration: 300ms;
+        animation-duration: 300ms;
+    }
+    .modal1 .modal-dialog1 {
+        width: 100%;
+        max-width: 550px;
+        background: white;
+        position: relative;
+        margin: 0 20px;
+        max-height: calc(100vh - 40px);
+        text-align: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-orient: vertical;
+        box-direction: normal;
+        -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        overflow: hidden;
+        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+        -webkit-animation-name: slide-in;
+        animation-name: slide-in;
+        animation-name: slide-in;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        animation-duration: 0.5s;
+    }
+    .modal1 .modal-dialog1 .modal-header1 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
         justify-content: space-around;
-    padding-left: 10px;
-    border-bottom: 1px solid #dbdbdb;
-    box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
-            justify-content: center;
-    background-color: aquamarine;
-    color: black;
-  }
-  .modal1 .modal-dialog1 .modal-header1 .modal-title1 {
-    margin-top: 5px;
-    text-align: center;
-  }
-  .modal1 .modal-dialog1 .modal-header1 .modal-close1 {
-    margin-left: 20px;
-    cursor: pointer;
-    padding: 1rem;
-  }
-  .TicketAdapt {
-    width: 100%;
-  }
-  .ContainerT {
-    width: 100%;
-    display: inline-block;
-    box-orient: horizontal;
-    box-direction: normal;
-    -ms-flex-direction: row;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-            flex-direction: row;
-    margin-bottom: 25px;
-  }
-  .ContainerT .Contain {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-orient: horizontal;
-    box-direction: normal;
-    -ms-flex-direction: row;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-            flex-direction: row;
-  }
-  .ContainerT .Contain .Title1 {
-    display: inline-block;
-    text-align: center;
-  }
-  .ContainerT .Contain .Buttn {
-    width: 100%;
-    padding: 0px;
-    margin-left: 0px;
-    background-color: #ffffff;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    -webkit-box-shadow: 3px 5px 5px 0px black;
-            box-shadow: 3px 5px 5px 0px black;
-  }
-  .ContainerT .Contain .Buttn .Buy {
-    width: 100%;
-    margin: 0px;
-    padding: 20px;
-    background-color: orange;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 10px;
-    max-width: 300px;
-  }
-  .ContainerT .Contain .Info {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    box-orient: horizontal;
-    box-direction: normal;
-    -ms-flex-direction: column;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-            flex-direction: row;
-    background-color: #ffffff;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    -webkit-box-shadow: 3px 5px 5px 0px black;
-            box-shadow: 3px 5px 5px 0px black;
-    font-size: 20px;
-  }
-  .ContainerT .Contain .Info .Start {
-    width: 100%;
-    width: 80px;
-    overflow: scroll;
-  }
-  .ContainerT .Contain .Info .Departure-time {
-    font-size: 20px;
-    padding-right: 10px;
-  }
-  .ContainerT .Contain .Info .Departure-date {
-    font-size: 20px;
-  }
-  .ContainerT .Contain .Info .Origin-name {
-    font-size: 20px;
-  }
-  .ContainerT .Contain .Info .Stop {
-    text-align: center;
-    opacity: 0.5;
-  }
-  .ContainerT .Contain .Info .Arrow {
-    width: 100%;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-  }
-  .ContainerT .Contain .Info .Arrival-time {
-    font-size: 20px;
-    padding-left: 10px;
-    text-align: right;
-  }
-  .ContainerT .Contain .Info .Destination-name {
-    font-size: 20px;
-    text-align: right;
-  }
-  .ContainerT .Contain .Info .Arrival-date {
-    font-size: 20px;
-    text-align: right;
-  }
-  @-webkit-keyframes appear {
-    from {
-      opacity: 0;
+        padding-left: 10px;
+        border-bottom: 1px solid #dbdbdb;
+        box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: aquamarine;
+        color: black;
     }
-    to {
-      opacity: 1;
+    .modal1 .modal-dialog1 .modal-header1 .modal-title1 {
+        margin-top: 5px;
+        text-align: center;
     }
-  }
-  @keyframes appear {
-    from {
-      opacity: 0;
+    .modal1 .modal-dialog1 .modal-header1 .modal-close1 {
+        margin-left: 20px;
+        cursor: pointer;
+        padding: 1rem;
     }
-    to {
-      opacity: 1;
+    .TicketAdapt {
+        width: 100%;
     }
-  }
-  @keyframes appear {
-    from {
-      opacity: 0;
+    .ContainerT {
+        width: 100%;
+        display: inline-block;
+        box-orient: horizontal;
+        box-direction: normal;
+        -ms-flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        margin-bottom: 25px;
     }
-    to {
-      opacity: 1;
+    .ContainerT .Contain {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-orient: horizontal;
+        box-direction: normal;
+        -ms-flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
     }
-  }
-  @-webkit-keyframes slide-in {
-    from {
-      -webkit-transform: translateY(-150px);
-              transform: translateY(-150px);
-      transform: translateY(-150px);
+    .ContainerT .Contain .Title1 {
+        display: inline-block;
+        text-align: center;
     }
-    to {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      transform: translateY(0);
+    .ContainerT .Contain .Buttn {
+        width: 100%;
+        margin: 0px;
+        padding: 15px;
+        margin-left: 25px;
+        background-color: #ffffff;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        -webkit-box-shadow: 3px 5px 5px 0px black;
+        box-shadow: 3px 5px 5px 0px black;
     }
-  }
-  @keyframes slide-in {
-    from {
-      -webkit-transform: translateY(-150px);
-              transform: translateY(-150px);
-      transform: translateY(-150px);
+    .ContainerT .Contain .Buttn .Buy {
+        margin: 15px;
+        padding: 20px;
+        width: 300px;
+        background-color: orange;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 10px;
+        max-width: 300px;
     }
-    to {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      transform: translateY(0);
+    .Info {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-orient: horizontal;
+        box-direction: normal;
+        -ms-flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        padding: 15px;
+        background-color: #ffffff;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        -webkit-box-shadow: 3px 5px 5px 0px black;
+        box-shadow: 3px 5px 5px 0px black;
+        font-size: 20px;
     }
-  }
-  @keyframes slide-in {
-    from {
-      -webkit-transform: translateY(-150px);
-              transform: translateY(-150px);
-      transform: translateY(-150px);
+    .Info .Departure-time {
+        font-size: 20px;
+        padding-right: 10px;
     }
-    to {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      transform: translateY(0);
+    .Info .Departure-date {
+        font-size: 20px;
     }
-  }
+    .Info .Origin-name {
+        font-size: 20px;
+    }
+    .Info .Stop {
+        text-align: center;
+        opacity: 0.5;
+    }
+    .Info .Arrival-time {
+        font-size: 20px;
+        padding-left: 10px;
+        text-align: right;
+    }
+    .Info .Destination-name {
+        font-size: 20px;
+        text-align: right;
+    }
+    .Info .Arrival-date {
+        font-size: 20px;
+        text-align: right;
+    }
+    @-webkit-keyframes appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes slide-in {
+        from {
+            -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+            transform: translateY(-150px);
+        }
+        to {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+    @keyframes slide-in {
+        from {
+            -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+            transform: translateY(-150px);
+        }
+        to {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+    @keyframes slide-in {
+        from {
+            -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+            transform: translateY(-150px);
+        }
+        to {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+    .Arrow {
+        width: 100%;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+    .modal {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 9998;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.25);
+        -webkit-animation-name: appear;
+        animation-name: appear;
+        -webkit-animation-duration: 300ms;
+        animation-duration: 300ms;
+    }
+    .modal .modal-dialog {
+        width: 100%;
+        max-width: 550px;
+        background: white;
+        position: relative;
+        margin: 0 20px;
+        max-height: calc(100vh - 40px);
+        text-align: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-orient: vertical;
+        box-direction: normal;
+        -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        overflow: hidden;
+        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+        -webkit-animation-name: slide-in;
+        animation-name: slide-in;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+    }
+    .modal .modal-dialog .modal-header {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    .modal .modal-dialog .modal-header .modal-title {
+        margin: 0px;
+    }
+    .modal .modal-dialog .modal-header .modal-close {
+        cursor: pointer;
+        padding: 1rem;
+        margin: -1rem -1rem -1rem auto;
+    }
+    .modal .modal-dialog .modal-footer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    .modal .modal-dialog .modal-body {
+        overflow: auto;
+    }
+    .modal .modal-dialog .modal-body .modal-content {
+        padding: 1rem;
+    }
+    .modal .modal-dialog .modal-body .modal-content .Enters {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        box-orient: vertical;
+        box-direction: normal;
+        -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+    }
+    .modal .modal-dialog .modal-body .modal-content .Enters .ERR {
+        color: red;
+    }
+    .modal1 {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        width: 100%;
+        z-index: 9999;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.25);
+        -webkit-animation-name: appear;
+        animation-name: appear;
+        -webkit-animation-duration: 300ms;
+        animation-duration: 300ms;
+    }
+    .modal1 .modal-dialog1 {
+        width: 100%;
+        max-width: 550px;
+        background: white;
+        position: relative;
+        margin: 0 20px;
+        max-height: calc(100vh - 40px);
+        text-align: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-orient: vertical;
+        box-direction: normal;
+        -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        overflow: hidden;
+        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+        -webkit-animation-name: slide-in;
+        animation-name: slide-in;
+        animation-name: slide-in;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        animation-duration: 0.5s;
+    }
+    .modal1 .modal-dialog1 .modal-header1 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        padding-left: 10px;
+        border-bottom: 1px solid #dbdbdb;
+        box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: aquamarine;
+        color: black;
+    }
+    .modal1 .modal-dialog1 .modal-header1 .modal-title1 {
+        margin-top: 5px;
+        text-align: center;
+    }
+    .modal1 .modal-dialog1 .modal-header1 .modal-close1 {
+        margin-left: 20px;
+        cursor: pointer;
+        padding: 1rem;
+    }
+    .ContainerT {
+        width: 100%;
+        display: inline-block;
+        box-orient: horizontal;
+        box-direction: normal;
+        -ms-flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        margin-bottom: 25px;
+    }
+    .ContainerT .Contain {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-orient: horizontal;
+        box-direction: normal;
+        -ms-flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+    }
+    .ContainerT .Contain .Title1 {
+        display: inline-block;
+        text-align: center;
+    }
+    .ContainerT .Contain .Buttn {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        margin-left: 0px;
+        background-color: #ffffff;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        -webkit-box-shadow: 3px 5px 5px 0px black;
+        box-shadow: 3px 5px 5px 0px black;
+    }
+    .ContainerT .Contain .Buttn .Buy {
+        margin: 15px;
+        padding: 20px;
+        width: 150px;
+        background-color: orange;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 10px;
+        max-width: 300px;
+    }
+    .TicketAdapt {
+        width: 100%;
+    }
+    .Company {
+        width: 150px;
+    }
+    .Info {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        box-orient: horizontal;
+        box-direction: normal;
+        -ms-flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        padding: 15px;
+        background-color: #ffffff;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        -webkit-box-shadow: 3px 5px 5px 0px black;
+        box-shadow: 3px 5px 5px 0px black;
+        font-size: 20px;
+    }
+    .Info .Departure-time {
+        font-size: 20px;
+        padding-right: 10px;
+    }
+    .Info .Departure-date {
+        font-size: 20px;
+    }
+    .Info .Origin-name {
+        font-size: 20px;
+    }
+    .Info .Stop {
+        text-align: center;
+        opacity: 0.5;
+    }
+    .Info .Arrival-time {
+        font-size: 20px;
+        padding-left: 10px;
+        text-align: right;
+    }
+    .Info .Destination-name {
+        font-size: 20px;
+        text-align: right;
+    }
+    .Info .Arrival-date {
+        font-size: 20px;
+        text-align: right;
+    }
+    @-webkit-keyframes appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes slide-in {
+        from {
+            -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+            transform: translateY(-150px);
+        }
+        to {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+    @keyframes slide-in {
+        from {
+            -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+            transform: translateY(-150px);
+        }
+        to {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+    @keyframes slide-in {
+        from {
+            -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+            transform: translateY(-150px);
+        }
+        to {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+    .Start {
+        width: 100%;
+        width: 80px;
+        overflow: scroll;
+    }
+    .Arrow {
+        width: 100%;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+    }
 }
 /*# sourceMappingURL=TicketRender.css.map */

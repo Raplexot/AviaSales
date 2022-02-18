@@ -1,32 +1,28 @@
-
-body {
-    width:100%;
-    background-color: #f3f7fa;
-    .Global {
-        display: flex;
-        width:100%;
-        flex-direction: row;
-        justify-content: center;
-        vertical-align: middle;
-        position: relative;
+@media (min-width: 400px) and (max-width: 1024px) {
+    body {
+        width: 100%;
+        background-color: #f3f7fa;
+        .Global {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            vertical-align: middle;
+            position: relative;
+        }
     }
 }
-
-
-@media (min-width:500px) and (max-width:1025px)
-{
-
-body {
-    width:100%;
-    background-color: #f3f7fa;
-    .Global {
-        display: flex;
-        width:100%;
-        flex-direction: column;
-        justify-content: center;
-        vertical-align: middle;
-        position: relative;
+@media (min-width: 1025px) and (max-width: 2100px) {
+    body {
+        width: 100%;
+        background-color: #f3f7fa;
+        .Global {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: center;
+            vertical-align: middle;
+            position: relative;
+        }
     }
-}
-
 }

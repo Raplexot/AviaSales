@@ -1,7 +1,4 @@
-
-@media (min-width:1025px) and (max-width:2100px)
-{
-
+@mixin formModal {
     .modal {
         position: fixed;
         top: 0;
@@ -20,7 +17,7 @@
         background-color: rgba(0, 0, 0, 0.25);
         animation-name: appear;
         animation-duration: 300ms;
-        
+
         .modal-dialog {
             width: 100%;
             max-width: 550px;
@@ -36,12 +33,12 @@
             flex-direction: column;
             overflow: hidden;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
             animation-name: animatetop;
             animation-duration: 0.4s;
             animation-name: slide-in;
             animation-duration: 0.5s;
-            
+
             .modal-header {
                 display: flex;
                 box-align: center;
@@ -58,7 +55,6 @@
                 }
             }
             .modal-footer {
-                
                 display: flex;
                 box-align: center;
                 -ms-flex-align: center;
@@ -67,12 +63,13 @@
             }
             .modal-body {
                 overflow: auto;
-                
+
                 .modal-content {
                     padding: 1rem;
-                    
+
                     .Enters {
-                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana,
+                            sans-serif;
                         display: flex;
                         box-align: center;
                         -ms-flex-align: center;
@@ -92,6 +89,9 @@
             }
         }
     }
+}
+
+@mixin successModal {
     .modal1 {
         position: fixed;
         top: 0px;
@@ -110,7 +110,7 @@
         background-color: rgba(0, 0, 0, 0.25);
         animation-name: appear;
         animation-duration: 300ms;
-        
+
         .modal-dialog1 {
             width: 100%;
             max-width: 550px;
@@ -126,14 +126,14 @@
             flex-direction: column;
             overflow: hidden;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
             animation-name: animatetop;
             animation-duration: 0.4s;
             animation-name: slide-in;
             animation-name: slide-in;
             animation-duration: 0.5s;
             animation-duration: 0.5s;
-            
+
             .modal-header1 {
                 display: flex;
                 justify-content: space-around;
@@ -144,7 +144,7 @@
                 justify-content: center;
                 background-color: aquamarine;
                 color: black;
-                
+
                 .modal-title1 {
                     margin-top: 5px;
                     text-align: center;
@@ -157,6 +157,9 @@
             }
         }
     }
+}
+
+@mixin BUTTON($Vart, $Ml, $Padding) {
     .ContainerT {
         width: 100%;
         display: inline-block;
@@ -165,7 +168,7 @@
         -ms-flex-direction: row;
         flex-direction: row;
         margin-bottom: 25px;
-        
+
         .Contain {
             width: 100%;
             display: flex;
@@ -173,435 +176,176 @@
             box-direction: normal;
             -ms-flex-direction: row;
             flex-direction: row;
-            
+
             .Title1 {
                 display: inline-block;
                 text-align: center;
             }
-            
+
             .Buttn {
-                width:100%;
-                padding: 15px;
-                margin-left: 25px;
+                width: 100%;
+                margin: 0px;
+                padding: $Padding;
+                margin-left: $Ml;
                 background-color: #ffffff;
                 border-bottom-left-radius: 10px;
                 border-top-left-radius: 10px;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 box-shadow: 3px 5px 5px 0px black;
-                
+
                 .Buy {
                     margin: 15px;
                     padding: 20px;
+                    width: $Vart;
                     background-color: orange;
                     font-size: 20px;
                     text-align: center;
                     border-radius: 10px;
                     max-width: 300px;
-                    min-width: 300px;
-                }
-            }
-            
-            .Info {
-                width: 100%;
-                display: flex;
-                box-orient: horizontal;
-                box-direction: normal;
-                -ms-flex-direction: row;
-                flex-direction: row;
-                padding: 15px;
-                background-color: #ffffff;
-                border-bottom-right-radius: 10px;
-                border-top-right-radius: 10px;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                box-shadow: 3px 5px 5px 0px black;
-                font-size: 20px;
-                
-                .Departure-time {
-                    font-size: 35px;
-                    padding-right: 10px;
-                }
-                
-                .Departure-date {
-                    font-size: 20px;
-                }
-                
-                .Origin-name {
-                    font-size: 20px;
-                }
-                
-                .Stop {
-                    text-align: center;
-                    opacity: 0.5;
-                }
-                
-                .Arrow {
-                    height: 50px;
-                    font-size: 0px;
-                    text-align: center;
-                }
-                
-                .Arrival-time {
-                    font-size: 35px;
-                    padding-left: 10px;
-                    text-align: right;
-                }
-                
-                .Destination-name {
-                    font-size: 20px;
-                    text-align: right;
-                }
-                
-                .Arrival-date {
-                    font-size: 20px;
-                    text-align: right;
-                }
-            }
-            
-            @keyframes appear {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
-                }
-            }
-            
-            @keyframes appear {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
-                }
-            }
-            
-            @keyframes slide-in {
-                from {
-                    transform: translateY(-150px);
-                    transform: translateY(-150px);
-                }
-                to {
-                    transform: translateY(0);
-                    transform: translateY(0);
-                }
-            }
-            
-            @keyframes slide-in {
-                from {
-                    transform: translateY(-150px);
-                    transform: translateY(-150px);
-                }
-                to {
-                    transform: translateY(0);
-                    transform: translateY(0);
                 }
             }
         }
     }
-    
 }
-@media (min-width:500px) and (max-width:900px){
-
- .modal {
-        
+@mixin INFO($Font) {
+    .Info {
         width: 100%;
-        z-index: 9998;
         display: flex;
-        box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        background-color: rgba(0, 0, 0, 0.25);
-        animation-name: appear;
-        animation-duration: 300ms;
-        
-        .modal-dialog {
-            width: 100%;
-            max-width: 550px;
-            background: white;
-            position: relative;
-            margin: 0 20px;
-            max-height: calc(100vh - 40px);
-            text-align: left;
-            display: flex;
-            box-orient: vertical;
-            box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-            0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            animation-name: animatetop;
-            animation-duration: 0.4s;
-            animation-name: slide-in;
-            animation-duration: 0.5s;
-            
-            .modal-header {
-                display: flex;
-                box-align: center;
-                -ms-flex-align: center;
-                align-items: center;
-                padding: 1rem;
-                .modal-title {
-                    margin: 0px;
-                }
-                .modal-close {
-                    cursor: pointer;
-                    padding: 1rem;
-                    margin: -1rem -1rem -1rem auto;
-                }
-            }
-            .modal-footer {
-                
-                display: flex;
-                box-align: center;
-                -ms-flex-align: center;
-                align-items: center;
-                padding: 1rem;
-            }
-            .modal-body {
-                overflow: auto;
-                
-                .modal-content {
-                    padding: 1rem;
-                    
-                    .Enters {
-                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                        display: flex;
-                        box-align: center;
-                        -ms-flex-align: center;
-                        align-items: center;
-                        box-pack: center;
-                        -ms-flex-pack: center;
-                        justify-content: center;
-                        box-orient: vertical;
-                        box-direction: normal;
-                        -ms-flex-direction: column;
-                        flex-direction: column;
-                        .ERR {
-                            color: red;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .modal1 {
-        position: fixed;
-        top: 0px;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-        width: 100%;
-        z-index: 9999;
-        display: flex;
-        box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        background-color: rgba(0, 0, 0, 0.25);
-        animation-name: appear;
-        animation-duration: 300ms;
-        
-        .modal-dialog1 {
-            width: 100%;
-            max-width: 550px;
-            background: white;
-            position: relative;
-            margin: 0 20px;
-            max-height: calc(100vh - 40px);
-            text-align: left;
-            display: flex;
-            box-orient: vertical;
-            box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-            0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            animation-name: animatetop;
-            animation-duration: 0.4s;
-            animation-name: slide-in;
-            animation-name: slide-in;
-            animation-duration: 0.5s;
-            animation-duration: 0.5s;
-            
-            .modal-header1 {
-                display: flex;
-                justify-content: space-around;
-                padding-left: 10px;
-                border-bottom: 1px solid #dbdbdb;
-                box-pack: center;
-                -ms-flex-pack: center;
-                justify-content: center;
-                background-color: aquamarine;
-                color: black;
-                
-                .modal-title1 {
-                    margin-top: 5px;
-                    text-align: center;
-                }
-                .modal-close1 {
-                    margin-left: 20px;
-                    cursor: pointer;
-                    padding: 1rem;
-                }
-            }
-        }
-    }
-    .TicketAdapt{
-        width:100%;
-    }
-    .ContainerT {
-        width: 100%;
-        display: inline-block;
         box-orient: horizontal;
         box-direction: normal;
         -ms-flex-direction: row;
         flex-direction: row;
-        margin-bottom: 25px;
-        
-        .Contain {
-            width: 100%;
-            display: flex;
-            box-orient: horizontal;
-            box-direction: normal;
-            -ms-flex-direction: row;
-            flex-direction: row;
-            
-            .Title1 {
-                display: inline-block;
-                text-align: center;
-            }
-            
-            .Buttn {
-                width:100%;
-                padding: 0px;
-                margin-left: 0px;
-                background-color: #ffffff;
-                border-bottom-left-radius: 10px;
-                border-top-left-radius: 10px;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                box-shadow: 3px 5px 5px 0px black;
-                
-                .Buy {
-                    width: 100%;
-                    margin: 0px;
-                    padding: 20px;
-                    background-color: orange;
-                    font-size: 20px;
-                    text-align: center;
-                    border-radius: 10px;
-                    max-width: 300px;
-                    
-                }
-            }
-            
-            .Info {
-                width: 100%;
-                display: flex;
-                box-orient: horizontal;
-                box-direction:normal;
-                -ms-flex-direction: column;
-                flex-direction: row;
-                background-color: #ffffff;
-                border-bottom-right-radius: 10px;
-                border-top-right-radius: 10px;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                box-shadow: 3px 5px 5px 0px black;
-                font-size: 20px;
-                
-                .Start{
-                    width:100%;
-                    width:80px;
-                    overflow:scroll;
-                }
-                .Departure-time {
-                    font-size: 20px;
-                    padding-right: 10px;
-                }
-                
-                .Departure-date {
-                    font-size: 20px;
-                }
-                
-                .Origin-name {
-                    font-size: 20px;
-                }
-                
-                .Stop {
-                    text-align: center;
-                    opacity: 0.5;
-                }
-                
-                .Arrow {
-                    width: 100%;
-                    width:50px;
-                    height: 50px;
-                    text-align: center;
-                }
-                
-                .Arrival-time {
-                    font-size: 20px;
-                    padding-left: 10px;
-                    text-align: right;
-                }
-                
-                .Destination-name {
-                    font-size: 20px;
-                    text-align: right;
-                }
-                
-                .Arrival-date {
-                    font-size: 20px;
-                    text-align: right;
-                }
-            }
-            
-            @keyframes appear {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
-                }
-            }
-            
-            @keyframes appear {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
-                }
-            }
-            
-            @keyframes slide-in {
-                from {
-                    transform: translateY(-150px);
-                    transform: translateY(-150px);
-                }
-                to {
-                    transform: translateY(0);
-                    transform: translateY(0);
-                }
-            }
-            
-            @keyframes slide-in {
-                from {
-                    transform: translateY(-150px);
-                    transform: translateY(-150px);
-                }
-                to {
-                    transform: translateY(0);
-                    transform: translateY(0);
-                }
-            }
+        padding: 15px;
+        background-color: #ffffff;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        box-shadow: 3px 5px 5px 0px black;
+        font-size: 20px;
+
+        .Departure-time {
+            font-size: $Font;
+            padding-right: 10px;
+        }
+
+        .Departure-date {
+            font-size: 20px;
+        }
+
+        .Origin-name {
+            font-size: 20px;
+        }
+
+        .Stop {
+            text-align: center;
+            opacity: 0.5;
+        }
+
+        .Arrival-time {
+            font-size: $Font;
+            padding-left: 10px;
+            text-align: right;
+        }
+
+        .Destination-name {
+            font-size: 20px;
+            text-align: right;
+        }
+
+        .Arrival-date {
+            font-size: 20px;
+            text-align: right;
         }
     }
 
+    @keyframes appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-in {
+        from {
+            transform: translateY(-150px);
+            transform: translateY(-150px);
+        }
+        to {
+            transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slide-in {
+        from {
+            transform: translateY(-150px);
+            transform: translateY(-150px);
+        }
+        to {
+            transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+}
+@media (min-width: 1025px) and (max-width: 2100px) {
+    @include formModal;
+    @include successModal;
+    @include BUTTON(300px, 25px, 15px);
+    @include INFO(20px);
+    .Arrow {
+        height: 50px;
+        font-size: 0px;
+        text-align: center;
+    }
+}
+@media (min-width: 500px) and (max-width: 900px) {
+    @include formModal;
+    @include successModal;
+
+    .TicketAdapt {
+        width: 100%;
+    }
+    @include BUTTON(300px, 25px, 15px);
+    @include INFO(20px);
+    .Arrow {
+        width: 100%;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+    @include formModal;
+    @include successModal;
+    @include BUTTON(150px, 0px, 0px);
+    .TicketAdapt {
+        width: 100%;
+    }
+    .Company {
+        width: 150px;
+    }
+    @include INFO(20px);
+    .Start {
+        width: 100%;
+        width: 80px;
+        overflow: scroll;
+    }
+    .Arrow {
+        width: 100%;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+    }
 }
