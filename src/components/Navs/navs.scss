@@ -1,9 +1,9 @@
-@mixin BOXES {
+@mixin mixedBoxes {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-@mixin CONTAINER {
+@mixin mixedContainer {
     width: 100%;
     padding: 15px;
     background-color: #ffffff;
@@ -12,13 +12,13 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-shadow: 3px 5px 5px 0px black;
 }
-@mixin BUTTON-HOLDER {
-    .Button-holder {
+@mixin mixedButtonHolder {
+    .buttonHolder {
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
-        .B {
+        .currencyButtons {
             padding: 10px 20px;
             color: #2196f3;
             border-color: grey;
@@ -59,20 +59,20 @@
     }
 }
 @media (min-width: 1025px) and (max-width: 2100px) {
-    .Boxes {
-        @include BOXES;
+    .boxes {
+        @include mixedBoxes;
         max-width: 400px;
         min-width: 400px;
 
         .container {
-            @include CONTAINER;
+            @include mixedContainer;
             max-height: 800px;
             min-height: 800px;
             max-width: 400px;
             min-width: 400px;
 
-            @include BUTTON-HOLDER;
-            .Title {
+            @include mixedButtonHolder;
+            .title {
                 width: 100%;
                 padding-top: 20px;
             }
@@ -91,21 +91,21 @@
     }
 }
 @media (min-width: 500px) and (max-width: 1025px) {
-    .Boxes {
-        @include BOXES;
+    .boxes {
+        @include mixedBoxes;
         max-width: 500px;
         margin: auto;
 
         .container {
-            @include CONTAINER;
+            @include mixedContainer;
             height: 350px;
             max-width: 500px;
             margin-bottom: 10px;
             h1 {
                 text-align: center;
             }
-            @include BUTTON-HOLDER;
-            .Title {
+            @include mixedButtonHolder;
+            .title {
                 width: 100%;
                 padding-top: 20px;
                 text-align: center;
@@ -127,21 +127,21 @@
     }
 }
 @media (min-width: 400px) and (max-width: 600px) {
-    .Boxes {
-        @include BOXES;
+    .boxes {
+        @include mixedBoxes;
         max-width: 500px;
         margin: auto;
         margin-bottom: 10px;
         .container {
-            @include CONTAINER;
+            @include mixedContainer;
             height: 350px;
             max-width: 500px;
 
             h1 {
                 text-align: center;
             }
-            @include BUTTON-HOLDER;
-            .Title {
+            @include mixedButtonHolder;
+            .title {
                 width: 100%;
                 padding-top: 20px;
                 text-align: center;

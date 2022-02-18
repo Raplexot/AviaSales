@@ -81,7 +81,7 @@
                         box-direction: normal;
                         -ms-flex-direction: column;
                         flex-direction: column;
-                        .ERR {
+                        .error {
                             color: red;
                         }
                     }
@@ -130,8 +130,6 @@
             animation-name: animatetop;
             animation-duration: 0.4s;
             animation-name: slide-in;
-            animation-name: slide-in;
-            animation-duration: 0.5s;
             animation-duration: 0.5s;
 
             .modal-header1 {
@@ -159,7 +157,7 @@
     }
 }
 
-@mixin BUTTON($Vart, $Ml, $Padding) {
+@mixin mixinButton($Vart, $Ml, $Padding) {
     .ContainerT {
         width: 100%;
         display: inline-block;
@@ -207,7 +205,7 @@
         }
     }
 }
-@mixin INFO($Font) {
+@mixin mixinInfo($Font) {
     .Info {
         width: 100%;
         display: flex;
@@ -301,8 +299,8 @@
 @media (min-width: 1025px) and (max-width: 2100px) {
     @include formModal;
     @include successModal;
-    @include BUTTON(300px, 25px, 15px);
-    @include INFO(20px);
+    @include mixinButton(300px, 25px, 15px);
+    @include mixinInfo(20px);
     .Arrow {
         height: 50px;
         font-size: 0px;
@@ -316,8 +314,8 @@
     .TicketAdapt {
         width: 100%;
     }
-    @include BUTTON(300px, 25px, 15px);
-    @include INFO(20px);
+    @include mixinButton(300px, 25px, 15px);
+    @include mixinInfo(20px);
     .Arrow {
         width: 100%;
         width: 50px;
@@ -329,14 +327,14 @@
 @media (min-width: 400px) and (max-width: 600px) {
     @include formModal;
     @include successModal;
-    @include BUTTON(150px, 0px, 0px);
+    @include mixinButton(150px, 0px, 0px);
     .TicketAdapt {
         width: 100%;
     }
     .Company {
         width: 150px;
     }
-    @include INFO(20px);
+    @include mixinInfo(20px);
     .Start {
         width: 100%;
         width: 80px;

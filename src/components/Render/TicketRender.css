@@ -109,7 +109,7 @@
         -webkit-box-direction: normal;
         flex-direction: column;
     }
-    .modal .modal-dialog .modal-body .modal-content .Enters .ERR {
+    .modal .modal-dialog .modal-body .modal-content .Enters .error {
         color: red;
     }
     .modal1 {
@@ -165,9 +165,7 @@
         animation-duration: 0.4s;
         -webkit-animation-name: slide-in;
         animation-name: slide-in;
-        animation-name: slide-in;
         -webkit-animation-duration: 0.5s;
-        animation-duration: 0.5s;
         animation-duration: 0.5s;
     }
     .modal1 .modal-dialog1 .modal-header1 {
@@ -468,7 +466,7 @@
         -webkit-box-direction: normal;
         flex-direction: column;
     }
-    .modal .modal-dialog .modal-body .modal-content .Enters .ERR {
+    .modal .modal-dialog .modal-body .modal-content .Enters .error {
         color: red;
     }
     .modal1 {
@@ -524,9 +522,7 @@
         animation-duration: 0.4s;
         -webkit-animation-name: slide-in;
         animation-name: slide-in;
-        animation-name: slide-in;
         -webkit-animation-duration: 0.5s;
-        animation-duration: 0.5s;
         animation-duration: 0.5s;
     }
     .modal1 .modal-dialog1 .modal-header1 {
@@ -831,7 +827,7 @@
         -webkit-box-direction: normal;
         flex-direction: column;
     }
-    .modal .modal-dialog .modal-body .modal-content .Enters .ERR {
+    .modal .modal-dialog .modal-body .modal-content .Enters .error {
         color: red;
     }
     .modal1 {
@@ -887,9 +883,7 @@
         animation-duration: 0.4s;
         -webkit-animation-name: slide-in;
         animation-name: slide-in;
-        animation-name: slide-in;
         -webkit-animation-duration: 0.5s;
-        animation-duration: 0.5s;
         animation-duration: 0.5s;
     }
     .modal1 .modal-dialog1 .modal-header1 {

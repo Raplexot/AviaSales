@@ -66,10 +66,6 @@ interface FetchTicketsSuccessAction {
     type: TicketActionTypes.FETCH_TICKETS_SUCCESS
     payload: IntTickets
 }
-interface FetchTicketsSuccessAction {
-    type: TicketActionTypes.FETCH_TICKETS_SUCCESS
-    payload: IntTickets
-}
 interface FetchTicketsErrorAction {
     type: TicketActionTypes.FETCH_TICKETS_ERROR
     payload: string

@@ -8,21 +8,30 @@ export const Nav = (): ReactElement => {
     const { getMoney } = useActionsCurrency()
     const { getStops } = useActionsStops()
     return (
-        <div className="Boxes">
+        <div className="boxes">
             <div className="container">
                 <h1>Currency</h1>
-                <div className="Button-holder">
-                    <button className="B" onClick={() => getMoney('RUB')}>
+                <div className="buttonHolder">
+                    <button
+                        className="currencyButtons"
+                        onClick={() => getMoney('RUB')}
+                    >
                         Rub
                     </button>
-                    <button className="B" onClick={() => getMoney('USD')}>
+                    <button
+                        className="currencyButtons"
+                        onClick={() => getMoney('USD')}
+                    >
                         Usd
                     </button>
-                    <button className="B" onClick={() => getMoney('EUR')}>
+                    <button
+                        className="currencyButtons"
+                        onClick={() => getMoney('EUR')}
+                    >
                         Eur
                     </button>
                 </div>
-                <h1 className="Title">Quantity of transfers</h1>
+                <h1 className="title">Quantity of transfers</h1>
 
                 <div className="checkPoint">
                     <label className="label">
@@ -32,7 +41,7 @@ export const Nav = (): ReactElement => {
                                 getStops(-1)
                             }}
                             type="checkbox"
-                            name="Stops"
+                            name="stops"
                         />{' '}
                         All
                     </label>
@@ -48,7 +57,7 @@ export const Nav = (): ReactElement => {
                                     : getStops(0)
                             }
                             type="checkbox"
-                            name="Stops"
+                            name="stops"
                         />
                         No trasfers
                     </label>
@@ -64,7 +73,7 @@ export const Nav = (): ReactElement => {
                                     : getStops(1)
                             }
                             type="checkbox"
-                            name="Stops"
+                            name="stops"
                         />
                         One transfer
                     </label>
@@ -80,7 +89,7 @@ export const Nav = (): ReactElement => {
                                     : getStops(2)
                             }
                             type="checkbox"
-                            name="Stops"
+                            name="stops"
                         />
                         Two transfers
                     </label>
@@ -96,7 +105,7 @@ export const Nav = (): ReactElement => {
                                     : getStops(3)
                             }
                             type="checkbox"
-                            name="Stops"
+                            name="stops"
                         />
                         Three transfers
                     </label>

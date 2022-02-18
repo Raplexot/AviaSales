@@ -86,7 +86,7 @@ const FormModal = (): JSX.Element => {
                                 />
                             </div>
                             {formik.touched.email && formik.errors.email ? (
-                                <p className="ERR">{formik.errors.email}</p>
+                                <p className="error">{formik.errors.email}</p>
                             ) : null}
                             <div>
                                 <input
@@ -100,7 +100,7 @@ const FormModal = (): JSX.Element => {
                                 />
                             </div>
                             {formik.touched.tel && formik.errors.tel ? (
-                                <p className="ERR">{formik.errors.tel}</p>
+                                <p className="error">{formik.errors.tel}</p>
                             ) : null}
                             <div>
                                 <input
@@ -115,7 +115,9 @@ const FormModal = (): JSX.Element => {
                             </div>
                             {formik.touched.firstName &&
                             formik.errors.firstName ? (
-                                <p className="ERR">{formik.errors.firstName}</p>
+                                <p className="error">
+                                    {formik.errors.firstName}
+                                </p>
                             ) : null}
                             <div>
                                 <input
@@ -130,7 +132,9 @@ const FormModal = (): JSX.Element => {
                             </div>
                             {formik.touched.lastName &&
                             formik.errors.lastName ? (
-                                <p className="ERR">{formik.errors.lastName}</p>
+                                <p className="error">
+                                    {formik.errors.lastName}
+                                </p>
                             ) : null}
                             <div>
                                 <input
@@ -143,11 +147,10 @@ const FormModal = (): JSX.Element => {
                                 />
                             </div>
                             {formik.touched.pass && formik.errors.pass ? (
-                                <p className="ERR">{formik.errors.pass}</p>
+                                <p className="error">{formik.errors.pass}</p>
                             ) : null}
 
                             <button
-                                className="Go"
                                 type="submit"
                                 onClick={
                                     formik.dirty && formik.isValid
