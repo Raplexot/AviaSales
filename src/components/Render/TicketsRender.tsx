@@ -1,28 +1,24 @@
-import './TicketRender.css'
+import './TicketRender.scss'
 import Tick from '../../images/Tick.png'
 import Arrow from '../../images/arrow.png'
-import FormModal from './FormModal'
-import SuccessModal from './SuccessModal'
 import { IntTicket } from '../../types/tickets'
-import { useTypedSelector } from '../../hooks/useTypedSelector'
 import { useActionsModal } from '../../hooks/useActions'
 
 interface IntTickets {
     ticket: IntTicket
-    curs: number
-    cursName: string
+    currency: number
+    currencyName: string
 }
 
 const TicketsRender = ({
     ticket,
-    curs = 0,
-    cursName = '',
+    currency = 0,
+    currencyName = '',
 }: IntTickets): JSX.Element => {
-    const visible = useTypedSelector((state) => state.modal)
     const { show } = useActionsModal()
 
     return (
-        <div className="Set">
+        
             <div className="ContainerT">
                 <div className="Contain">
                     <div className="Buttn">
@@ -31,19 +27,19 @@ const TicketsRender = ({
                             <>
                                 <button
                                     id="show-modal"
-                                    onClick={() => show(true, false)}
+                                    onClick={() => show([true, false])}
                                     className="Buy"
                                 >
                                     Buy only for :
                                     <span>
                                         {' ' +
-                                            (ticket.price * curs).toFixed(0) +
+                                            (ticket.price * currency).toFixed(
+                                                0
+                                            ) +
                                             ' ' +
-                                            cursName}{' '}
+                                            currencyName}{' '}
                                     </span>
                                 </button>
-                                <FormModal visible={visible.formModal} />
-                                <SuccessModal visible={visible.successModal} />
                             </>
                         </div>
                     </div>
@@ -83,7 +79,7 @@ const TicketsRender = ({
                     </div>
                 </div>
             </div>
-        </div>
+       
     )
 }
 

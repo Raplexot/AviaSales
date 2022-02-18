@@ -1,17 +1,11 @@
 import { Dispatch } from 'react'
-import { ModalAction, FormActionType } from '../../types/tickets'
+import { ModalActions, FormActionType } from '../../types/tickets'
 
-export function show(bool: boolean, bool1: boolean) {
-    return async (dispatch: Dispatch<ModalAction>) => {
+export function show(bool: boolean[]) {
+    return async (dispatch: Dispatch<ModalActions>) => {
         dispatch({
             type: FormActionType.ACTIVE_FORM,
             payload: bool,
-            payload1: bool1,
-        })
-        dispatch({
-            type: FormActionType.ACTIVE_SUCCESS,
-            payload: bool,
-            payload1: bool1,
         })
     }
 }

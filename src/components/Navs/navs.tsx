@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react'
 import './navs.css'
-import { useActionsCurs, useActionsStops } from '../../hooks/useActions'
+import { useActionsCurrency, useActionsStops } from '../../hooks/useActions'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
 
 export const Nav = (): ReactElement => {
     const stop = useTypedSelector((state) => state.stops)
-    const { getMoney } = useActionsCurs()
+    const { getMoney } = useActionsCurrency()
     const { getStops } = useActionsStops()
     return (
         <div className="Boxes">
@@ -24,52 +24,77 @@ export const Nav = (): ReactElement => {
                 </div>
                 <h1 className="Title">Quantity of transfers</h1>
 
-                <div className="Checks">
-                    <label className="Labin">
+                <div className="checkPoint">
+                    <label className="label">
                         <input
                             checked={stop.stops.includes(-1)}
-                            className="Chik"
-                            onChange={() => getStops(-1)}
+                            onChange={() => {
+                                getStops(-1)
+                            }}
                             type="checkbox"
                             name="Stops"
                         />{' '}
                         All
                     </label>
-                    <label className="Labin">
+                    <label className="label">
                         <input
-                            checked={stop.stops.includes(0)}
-                            className="Chik"
-                            onChange={() => getStops(0)}
+                            checked={
+                                stop.stops.includes(0) ||
+                                stop.stops.includes(-1)
+                            }
+                            onChange={() =>
+                                stop.stops.includes(-1)
+                                    ? (getStops(-1), getStops(0))
+                                    : getStops(0)
+                            }
                             type="checkbox"
                             name="Stops"
                         />
                         No trasfers
                     </label>
-                    <label className="Labin">
+                    <label className="label">
                         <input
-                            checked={stop.stops.includes(1)}
-                            className="Chik"
-                            onChange={() => getStops(1)}
+                            checked={
+                                stop.stops.includes(1) ||
+                                stop.stops.includes(-1)
+                            }
+                            onChange={() =>
+                                stop.stops.includes(-1)
+                                    ? (getStops(-1), getStops(1))
+                                    : getStops(1)
+                            }
                             type="checkbox"
                             name="Stops"
                         />
                         One transfer
                     </label>
-                    <label className="Labin">
+                    <label className="label">
                         <input
-                            checked={stop.stops.includes(2)}
-                            className="Chik"
-                            onChange={() => getStops(2)}
+                            checked={
+                                stop.stops.includes(2) ||
+                                stop.stops.includes(-1)
+                            }
+                            onChange={() =>
+                                stop.stops.includes(-1)
+                                    ? (getStops(-1), getStops(2))
+                                    : getStops(2)
+                            }
                             type="checkbox"
                             name="Stops"
                         />
                         Two transfers
                     </label>
-                    <label className="Labin">
+                    <label className="label">
                         <input
-                            checked={stop.stops.includes(3)}
-                            className="Chik"
-                            onChange={() => getStops(3)}
+                            checked={
+                                stop.stops.includes(3) ||
+                                stop.stops.includes(-1)
+                            }
+                            onChange={() =>
+                                stop.stops.includes(-1)
+                                    ? (getStops(-1), getStops(3))
+                                    : getStops(3)
+                            }
                             type="checkbox"
                             name="Stops"
                         />

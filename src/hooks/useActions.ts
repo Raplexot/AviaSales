@@ -3,31 +3,27 @@ import { bindActionCreators } from 'redux'
 import * as TicketActionCreators from '../store/action-creator/ticket'
 import * as MoneyActionCreators from '../store/action-creator/money'
 import * as StopsActionCreators from '../store/action-creator/stops'
-import * as CursActionCreators from '../store/action-creator/moneyCurs'
+import * as CurrencyActionCreators from '../store/action-creator/moneyCurrency'
 import * as ModalActionCreators from '../store/action-creator/modal'
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const useActions = () => {
+export const useActions = ():any => {
     const dispatch = useDispatch()
     return bindActionCreators(TicketActionCreators, dispatch)
 }
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const useActionsMoney = () => {
+
+export const useActionsMoney = ():any  => {
     const dispatch = useDispatch()
     return bindActionCreators(MoneyActionCreators, dispatch)
 }
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const useActionsStops = () => {
+export const useActionsStops = ():any  => {
     const dispatch = useDispatch()
     return bindActionCreators(StopsActionCreators, dispatch)
 }
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const useActionsModal = () => {
+export const useActionsModal = ():any  => {
     const dispatch = useDispatch()
     return bindActionCreators(ModalActionCreators, dispatch)
 }
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const useActionsCurs = () => {
+export const useActionsCurrency = ():any  => {
     const dispatch = useDispatch()
-    return bindActionCreators(CursActionCreators, dispatch)
+    return bindActionCreators(CurrencyActionCreators, dispatch)
 }

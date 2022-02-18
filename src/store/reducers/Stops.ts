@@ -1,7 +1,7 @@
 import { StopsActionType, stopsState, stopsAction } from '../../types/tickets'
 
 const initialState: stopsState = {
-    stops: [0],
+    stops: [-1],
 }
 
 export const stopsReducer = (

@@ -9,7 +9,7 @@ export const rootReducer = combineReducers({
     ticket: ticketReducer,
     money: moneyReducer,
     stops: stopsReducer,
-    Curs: moneyCursReducer,
+    currency: moneyCursReducer,
     modal: formsReducer,
 })
 

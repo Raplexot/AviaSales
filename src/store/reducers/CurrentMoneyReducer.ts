@@ -1,19 +1,19 @@
 import {
-    cursAction,
-    MoneyCursActionType,
-    MoneyCursState,
+    currencyAction,
+    MoneyCurrencyActionType,
+    MoneyCurrencyState,
 } from '../../types/tickets'
 
-const initialStateCursMoney: MoneyCursState = {
-    moneyCurs: 'RUB',
+const initialStateCurrencyMoney: MoneyCurrencyState = {
+    moneyCurrency: 'RUB',
 }
 export const moneyCursReducer = (
-    state = initialStateCursMoney,
-    action: cursAction
-): MoneyCursState => {
+    state = initialStateCurrencyMoney,
+    action: currencyAction
+): MoneyCurrencyState => {
     switch (action.type) {
-        case MoneyCursActionType.DO_MONEY:
-            return { moneyCurs: action.payload }
+        case MoneyCurrencyActionType.GET_CURRENCY:
+            return { moneyCurrency: action.payload }
 
         default:
             return state

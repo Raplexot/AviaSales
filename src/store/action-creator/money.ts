@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Dispatch } from 'react'
 import { MoneyAction, MoneyActionTypes } from '../../types/tickets'
 
-export const fetchMoney = (moneyCurs: string) => {
+export const fetchMoney = (moneyCurrency: string) => {
     return async (dispatch: Dispatch<MoneyAction>) => {
         try {
             dispatch({ type: MoneyActionTypes.FETCH_MONEY })
@@ -12,7 +12,7 @@ export const fetchMoney = (moneyCurs: string) => {
             dispatch({
                 type: MoneyActionTypes.FETCH_MONEY_SUCCESS,
                 payload: response.data.rates,
-                moneyCurs,
+                moneyCurrency,
             })
         } catch (e) {
             dispatch({

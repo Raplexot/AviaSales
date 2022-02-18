@@ -1,19 +1,16 @@
-import { FormActionType, ModalState, ModalAction } from '../../types/tickets'
+import { FormActionType, ModalState, ModalActions } from '../../types/tickets'
 
 const initialState: ModalState = {
-    formModal: false,
-    successModal: false,
+    modals: [],
 }
 
 export const formsReducer = (
     state = initialState,
-    action: ModalAction
+    action: ModalActions
 ): ModalState => {
     switch (action.type) {
         case FormActionType.ACTIVE_FORM:
-            return { formModal: action.payload, successModal: action.payload }
-        case FormActionType.ACTIVE_SUCCESS:
-            return { formModal: action.payload, successModal: action.payload1 }
+            return { modals: action.payload }
         default:
             return state
     }

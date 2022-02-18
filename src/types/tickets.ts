@@ -8,8 +8,7 @@ export interface stopsState {
 }
 
 export interface ModalState {
-    formModal: boolean
-    successModal: boolean
+    modals: boolean[]
 }
 
 export interface MoneyState {
@@ -18,8 +17,8 @@ export interface MoneyState {
     moneyError: null | string
 }
 
-export interface MoneyCursState {
-    moneyCurs: string
+export interface MoneyCurrencyState {
+    moneyCurrency: string
 }
 
 export type IntMoney = {
@@ -37,15 +36,14 @@ export enum StopsActionType {
 
 export enum FormActionType {
     ACTIVE_FORM = 'ACTIVE_FORM',
-    ACTIVE_SUCCESS = 'ACTIVE_SUCCESS',
 }
 
-export enum MoneyCursActionType {
-    DO_MONEY = 'DO_MONEY',
+export enum MoneyCurrencyActionType {
+    GET_CURRENCY = 'GET_CURRENCY',
 }
 
-export interface cursAction {
-    type: MoneyCursActionType.DO_MONEY
+export interface currencyAction {
+    type: MoneyCurrencyActionType.GET_CURRENCY
     payload: string
 }
 
@@ -54,18 +52,10 @@ export interface stopsAction {
     payload: number
 }
 
-export interface modalAction {
-    type: FormActionType.ACTIVE_FORM
-    payload: boolean
-    payload1: boolean
+export interface ModalActions {
+    type: FormActionType
+    payload: boolean[]
 }
-export interface SuccessAction {
-    type: FormActionType.ACTIVE_SUCCESS
-    payload: boolean
-    payload1: boolean
-}
-
-export type ModalAction = SuccessAction | modalAction
 
 type IntStops = Array<number>
 
@@ -97,7 +87,7 @@ interface FetchMoneyAction {
 interface FetchMoneySuccessAction {
     type: MoneyActionTypes.FETCH_MONEY_SUCCESS
     payload: IntMoney
-    moneyCurs: string
+    moneyCurrency: string
 }
 interface FetchMoneyErrorAction {
     type: MoneyActionTypes.FETCH_MONEY_ERROR
