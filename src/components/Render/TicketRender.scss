@@ -1,4 +1,5 @@
-@mixin formModal {
+
+@mixin formModalAndSuccessModal{
     .modal {
         position: fixed;
         top: 0;
@@ -89,9 +90,6 @@
             }
         }
     }
-}
-
-@mixin successModal {
     .modal1 {
         position: fixed;
         top: 0px;
@@ -110,7 +108,7 @@
         background-color: rgba(0, 0, 0, 0.25);
         animation-name: appear;
         animation-duration: 300ms;
-
+        
         .modal-dialog1 {
             width: 100%;
             max-width: 550px;
@@ -126,12 +124,12 @@
             flex-direction: column;
             overflow: hidden;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
             animation-name: animatetop;
             animation-duration: 0.4s;
             animation-name: slide-in;
             animation-duration: 0.5s;
-
+            
             .modal-header1 {
                 display: flex;
                 justify-content: space-around;
@@ -142,7 +140,7 @@
                 justify-content: center;
                 background-color: aquamarine;
                 color: black;
-
+                
                 .modal-title1 {
                     margin-top: 5px;
                     text-align: center;
@@ -155,8 +153,8 @@
             }
         }
     }
-}
 
+}
 @mixin mixinButton($Vart, $Ml, $Padding) {
     .ContainerT {
         width: 100%;
@@ -166,7 +164,7 @@
         -ms-flex-direction: row;
         flex-direction: row;
         margin-bottom: 25px;
-
+        
         .Contain {
             width: 100%;
             display: flex;
@@ -297,8 +295,7 @@
     }
 }
 @media (min-width: 1025px) and (max-width: 2100px) {
-    @include formModal;
-    @include successModal;
+    @include formModalAndSuccessModal;
     @include mixinButton(300px, 25px, 15px);
     @include mixinInfo(20px);
     .Arrow {
@@ -308,13 +305,12 @@
     }
 }
 @media (min-width: 500px) and (max-width: 900px) {
-    @include formModal;
-    @include successModal;
+    @include formModalAndSuccessModal;
 
     .TicketAdapt {
         width: 100%;
     }
-    @include mixinButton(300px, 25px, 15px);
+    @include mixinButton(300px, 0px, 15px);
     @include mixinInfo(20px);
     .Arrow {
         width: 100%;
@@ -325,8 +321,7 @@
 }
 
 @media (min-width: 400px) and (max-width: 600px) {
-    @include formModal;
-    @include successModal;
+    @include formModalAndSuccessModal;
     @include mixinButton(150px, 0px, 0px);
     .TicketAdapt {
         width: 100%;

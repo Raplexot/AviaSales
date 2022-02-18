@@ -15,14 +15,17 @@ export const useActionsMoney = (): typeof MoneyActionCreators => {
     const dispatch = useDispatch()
     return bindActionCreators(MoneyActionCreators, dispatch)
 }
+
 export const useActionsStops = (): typeof StopsActionCreators => {
     const dispatch = useDispatch()
     return bindActionCreators(StopsActionCreators, dispatch)
 }
+
 export const useActionsModal = (): typeof ModalActionCreators => {
     const dispatch = useDispatch()
     return bindActionCreators(ModalActionCreators, dispatch)
 }
+
 export const useActionsCurrency = (): typeof CurrencyActionCreators => {
     const dispatch = useDispatch()
     return bindActionCreators(CurrencyActionCreators, dispatch)

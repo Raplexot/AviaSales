@@ -39,7 +39,7 @@ const FormModal = (): JSX.Element => {
                 .required('Required'),
         }),
         onSubmit: () => {
-            console.log()
+            console.log();
         },
     })
     const onKeydown = ({ key }: KeyboardEvent): void => {

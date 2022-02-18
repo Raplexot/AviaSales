@@ -17,7 +17,7 @@ export const fetchMoney = (moneyCurrency: string) => {
         } catch (e) {
             dispatch({
                 type: MoneyActionTypes.FETCH_MONEY_ERROR,
-                payload: 'Error of dounload',
+                payload: 'Error of download',
             })
         }
     }

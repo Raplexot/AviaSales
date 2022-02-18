@@ -20,7 +20,7 @@ export const fetchTickets = () => {
         } catch (e) {
             dispatch({
                 type: TicketActionTypes.FETCH_TICKETS_ERROR,
-                payload: 'Error of dounload',
+                payload: 'Error of download',
             })
         }
     }

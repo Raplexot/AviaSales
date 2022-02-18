@@ -10,14 +10,18 @@ const Ticket = (): JSX.Element => {
     const { tickets, error, loading } = useTypedSelector(
         (state: RootState) => state.ticket
     )
+
     const stops = useTypedSelector((state) => state.stops)
+
     const currency = useTypedSelector((state) => state.currency)
+
     const { money, moneyError, moneyLoading } = useTypedSelector(
         (state: RootState) => state.money
     )
 
     const { fetchTickets } = useActions()
     const { fetchMoney } = useActionsMoney()
+    
     useEffect(() => {
         fetchMoney(currency.moneyCurrency)
         fetchTickets()

@@ -9,7 +9,7 @@ export const stopsReducer = (
     action: stopsAction
 ): stopsState => {
     switch (action.type) {
-        case StopsActionType.DO_STOPS:
+        case StopsActionType.GET_STOPS:
             return {
                 stops: state.stops.includes(action.payload)
                     ? state.stops.filter((el) => el !== action.payload)

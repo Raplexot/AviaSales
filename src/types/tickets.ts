@@ -31,7 +31,7 @@ export enum TicketActionTypes {
     FETCH_TICKETS_ERROR = 'FETCH_TICKETS_ERROR',
 }
 export enum StopsActionType {
-    DO_STOPS = 'DO_STOPS',
+    GET_STOPS = 'GET_STOPS',
 }
 
 export enum FormActionType {
@@ -48,7 +48,7 @@ export interface currencyAction {
 }
 
 export interface stopsAction {
-    type: StopsActionType.DO_STOPS
+    type: StopsActionType.GET_STOPS
     payload: number
 }
 
