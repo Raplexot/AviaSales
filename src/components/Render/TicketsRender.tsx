@@ -3,6 +3,7 @@ import Tick from '../../images/Tick.png'
 import Arrow from '../../images/arrow.png'
 import { IntTicket } from '../../types/tickets'
 import { useActionsModal } from '../../hooks/useActions'
+import { observer } from 'mobx-react-lite'
 
 interface IntTickets {
     ticket: IntTicket

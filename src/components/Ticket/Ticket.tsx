@@ -1,48 +1,36 @@
 import { useEffect, useMemo } from 'react'
 import TicketsRender from '../Render/TicketsRender'
-import { useTypedSelector } from '../../hooks/useTypedSelector'
-import { useActions, useActionsMoney } from '../../hooks/useActions'
-import { RootState } from '../../store/reducers'
 import FormModal from '../Render/FormModal'
 import SuccessModal from '../Render/SuccessModal'
 import '../Render/TicketRender.scss'
-const Ticket = (): JSX.Element => {
-    const { tickets, error, loading } = useTypedSelector(
-        (state: RootState) => state.ticket
-    )
+import ticketConstructor from '../../store/reducers/ticketsMobX'
+import moneyConstructor from '../../store/reducers/moneyMobx'
+import stopsConstructor from '../../store/reducers/stopsMobX'
+import currencyConstructor from '../../store/reducers/moneyCurrencyMobx'
+import { observer } from 'mobx-react-lite'
+const Ticket = observer((): JSX.Element => {
 
-    const stops = useTypedSelector((state) => state.stops)
-
-    const currency = useTypedSelector((state) => state.currency)
-
-    const { money, moneyError, moneyLoading } = useTypedSelector(
-        (state: RootState) => state.money
-    )
-
-    const { fetchTickets } = useActions()
-    const { fetchMoney } = useActionsMoney()
-    
     useEffect(() => {
-        fetchMoney(currency.moneyCurrency)
-        fetchTickets()
-    }, [currency])
+        moneyConstructor.getMoney();
+        ticketConstructor.getTicket();
+    }, [currencyConstructor.moneyCurrency])
 
     const memo = useMemo(
         () =>
-            stops.stops.includes(-1)
-                ? tickets
-                : tickets.filter((ticket) =>
-                      stops.stops.includes(ticket.stops)
+        stopsConstructor.stops.includes(-1)
+                ? ticketConstructor.tickets
+                : ticketConstructor.tickets.filter((ticket) =>
+                stopsConstructor.stops.includes(ticket.stops)
                   ),
-        [tickets, stops]
+        [ticketConstructor.tickets, stopsConstructor.stops]
     )
-    if (moneyLoading || loading) {
+    if (moneyConstructor.moneyLoading || ticketConstructor.loading) {
         return <h1>Loading</h1>
     }
-    if (moneyError || error) {
+    if (moneyConstructor.moneyError || ticketConstructor.error) {
         return (
             <h1>
-                {error} {moneyError}
+                {ticketConstructor.error} {moneyConstructor.moneyError}
             </h1>
         )
     }
@@ -53,8 +41,8 @@ const Ticket = (): JSX.Element => {
                 <div key={Math.random()} className="TicketAdapt">
                     <TicketsRender
                         ticket={ticket}
-                        currency={money[currency.moneyCurrency]}
-                        currencyName={currency.moneyCurrency}
+                        currency={moneyConstructor.money[currencyConstructor.moneyCurrency]}
+                        currencyName={currencyConstructor.moneyCurrency}
                     />
                 </div>
             ))}
@@ -62,5 +50,5 @@ const Ticket = (): JSX.Element => {
             <SuccessModal />
         </div>
     )
-}
+})
 export default Ticket

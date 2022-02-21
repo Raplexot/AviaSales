@@ -9,3 +9,6 @@ export function show(bool: boolean[]) {
         })
     }
 }
+
+
+

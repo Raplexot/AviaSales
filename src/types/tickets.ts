@@ -57,7 +57,7 @@ export interface ModalActions {
     payload: boolean[]
 }
 
-type IntStops = Array<number>
+export type IntStops = Array<number>
 
 interface FetchTicketsAction {
     type: TicketActionTypes.FETCH_TICKETS
@@ -114,4 +114,4 @@ export interface IntTicket {
     price: number
 }
 
-type IntTickets = IntTicket[]
+export type IntTickets = IntTicket[]
