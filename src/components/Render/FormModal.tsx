@@ -1,12 +1,11 @@
 import { useEffect } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { useActionsModal } from '../../hooks/useActions'
-import { useTypedSelector } from '../../hooks/useTypedSelector'
+import modalConstructor from '../../store/reducers/modalMobx'
+import { observer } from 'mobx-react-lite'
 
-const FormModal = (): JSX.Element => {
-    const visible = useTypedSelector((state) => state.modal)
-    const { show } = useActionsModal()
+const FormModal = observer(() => {
+    const { modals } = modalConstructor
     const formik = useFormik({
         initialValues: {
             firstName: '',
@@ -39,13 +38,13 @@ const FormModal = (): JSX.Element => {
                 .required('Required'),
         }),
         onSubmit: () => {
-            console.log();
+            console.log()
         },
     })
     const onKeydown = ({ key }: KeyboardEvent): void => {
         switch (key) {
             case 'Escape':
-                show([false, false])
+                modalConstructor.showModal([false, false])
                 break
         }
     }
@@ -56,17 +55,21 @@ const FormModal = (): JSX.Element => {
     })
 
     // если компонент невидим, то не отображаем его
-    if (!visible.modals[0]) return <></>
-
+    if (!modals[0]) return <></>
     // или возвращаем верстку модального окна
     return (
-        <div className="modal" onClick={() => show([false, false])}>
+        <div
+            className="modal"
+            onClick={() => modalConstructor.showModal([false, false])}
+        >
             <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
                 <div className="modal-header">
                     <h3 className="modal-title">Please enter info</h3>
                     <span
                         className="modal-close"
-                        onClick={() => show([false, false])}
+                        onClick={() =>
+                            modalConstructor.showModal([false, false])
+                        }
                     >
                         &times;
                     </span>
@@ -154,7 +157,11 @@ const FormModal = (): JSX.Element => {
                                 type="submit"
                                 onClick={
                                     formik.dirty && formik.isValid
-                                        ? () => show([false, true])
+                                        ? () =>
+                                              modalConstructor.showModal([
+                                                  false,
+                                                  true,
+                                              ])
                                         : () => alert('Complete all Fields')
                                 }
                             >
@@ -166,6 +173,6 @@ const FormModal = (): JSX.Element => {
             </div>
         </div>
     )
-}
+})
 
 export default FormModal

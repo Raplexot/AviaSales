@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { FC, useEffect, useMemo } from 'react'
 import TicketsRender from '../Render/TicketsRender'
 import FormModal from '../Render/FormModal'
 import SuccessModal from '../Render/SuccessModal'
@@ -8,29 +8,30 @@ import moneyConstructor from '../../store/reducers/moneyMobx'
 import stopsConstructor from '../../store/reducers/stopsMobX'
 import currencyConstructor from '../../store/reducers/moneyCurrencyMobx'
 import { observer } from 'mobx-react-lite'
-const Ticket = observer((): JSX.Element => {
-
+const Ticket: FC = observer((): JSX.Element => {
+    const { tickets, error, loading } = ticketConstructor
+    const { moneyCurrency } = currencyConstructor
+    const { stops } = stopsConstructor
+    const { money, moneyError, moneyLoading } = moneyConstructor
     useEffect(() => {
-        moneyConstructor.getMoney();
-        ticketConstructor.getTicket();
-    }, [currencyConstructor.moneyCurrency])
+        moneyConstructor.getMoney()
+        ticketConstructor.getTicket()
+    }, [moneyCurrency])
 
     const memo = useMemo(
         () =>
-        stopsConstructor.stops.includes(-1)
-                ? ticketConstructor.tickets
-                : ticketConstructor.tickets.filter((ticket) =>
-                stopsConstructor.stops.includes(ticket.stops)
-                  ),
-        [ticketConstructor.tickets, stopsConstructor.stops]
+            stops.includes(-1)
+                ? tickets
+                : tickets.filter((ticket) => stops.includes(ticket.stops)),
+        [tickets, stops]
     )
-    if (moneyConstructor.moneyLoading || ticketConstructor.loading) {
+    if (moneyLoading || loading) {
         return <h1>Loading</h1>
     }
-    if (moneyConstructor.moneyError || ticketConstructor.error) {
+    if (moneyError || error) {
         return (
             <h1>
-                {ticketConstructor.error} {moneyConstructor.moneyError}
+                {error} {moneyError}
             </h1>
         )
     }
@@ -41,8 +42,8 @@ const Ticket = observer((): JSX.Element => {
                 <div key={Math.random()} className="TicketAdapt">
                     <TicketsRender
                         ticket={ticket}
-                        currency={moneyConstructor.money[currencyConstructor.moneyCurrency]}
-                        currencyName={currencyConstructor.moneyCurrency}
+                        currency={money[moneyCurrency]}
+                        currencyName={moneyCurrency}
                     />
                 </div>
             ))}

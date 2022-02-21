@@ -4,8 +4,7 @@ import Header from './components/Header/Header'
 import Ticket from './components/Ticket/Ticket'
 import { observer } from 'mobx-react-lite'
 
-
-const App = observer(():JSX.Element => {
+const App = (): JSX.Element => {
     return (
         <>
             <Header />
@@ -15,6 +14,6 @@ const App = observer(():JSX.Element => {
             </div>
         </>
     )
-})
+}
 
 export default App

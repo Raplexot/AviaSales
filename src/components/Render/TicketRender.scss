@@ -1,5 +1,4 @@
-
-@mixin formModalAndSuccessModal{
+@mixin formModalAndSuccessModal {
     .modal {
         position: fixed;
         top: 0;
@@ -108,7 +107,7 @@
         background-color: rgba(0, 0, 0, 0.25);
         animation-name: appear;
         animation-duration: 300ms;
-        
+
         .modal-dialog1 {
             width: 100%;
             max-width: 550px;
@@ -124,12 +123,12 @@
             flex-direction: column;
             overflow: hidden;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
             animation-name: animatetop;
             animation-duration: 0.4s;
             animation-name: slide-in;
             animation-duration: 0.5s;
-            
+
             .modal-header1 {
                 display: flex;
                 justify-content: space-around;
@@ -140,7 +139,7 @@
                 justify-content: center;
                 background-color: aquamarine;
                 color: black;
-                
+
                 .modal-title1 {
                     margin-top: 5px;
                     text-align: center;
@@ -153,7 +152,6 @@
             }
         }
     }
-
 }
 @mixin mixinButton($Vart, $Ml, $Padding) {
     .ContainerT {
@@ -164,7 +162,7 @@
         -ms-flex-direction: row;
         flex-direction: row;
         margin-bottom: 25px;
-        
+
         .Contain {
             width: 100%;
             display: flex;

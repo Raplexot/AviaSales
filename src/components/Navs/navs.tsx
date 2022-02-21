@@ -4,8 +4,7 @@ import stopsConstructor from '../../store/reducers/stopsMobX'
 import moneyCurrency from '../../store/reducers/moneyCurrencyMobx'
 import { observer } from 'mobx-react-lite'
 
-export const Nav = (): ReactElement => {
-   
+export const Nav = observer((): ReactElement => {
     return (
         <div className="boxes">
             <div className="container">
@@ -52,7 +51,8 @@ export const Nav = (): ReactElement => {
                             }
                             onChange={() =>
                                 stopsConstructor.stops.includes(-1)
-                                    ? (stopsConstructor.getStops(-1), stopsConstructor.getStops(0))
+                                    ? (stopsConstructor.getStops(-1),
+                                      stopsConstructor.getStops(0))
                                     : stopsConstructor.getStops(0)
                             }
                             type="checkbox"
@@ -68,7 +68,8 @@ export const Nav = (): ReactElement => {
                             }
                             onChange={() =>
                                 stopsConstructor.stops.includes(-1)
-                                    ? (stopsConstructor.getStops(-1), stopsConstructor.getStops(1))
+                                    ? (stopsConstructor.getStops(-1),
+                                      stopsConstructor.getStops(1))
                                     : stopsConstructor.getStops(1)
                             }
                             type="checkbox"
@@ -84,7 +85,8 @@ export const Nav = (): ReactElement => {
                             }
                             onChange={() =>
                                 stopsConstructor.stops.includes(-1)
-                                    ? (stopsConstructor.getStops(-1), stopsConstructor.getStops(2))
+                                    ? (stopsConstructor.getStops(-1),
+                                      stopsConstructor.getStops(2))
                                     : stopsConstructor.getStops(2)
                             }
                             type="checkbox"
@@ -100,7 +102,8 @@ export const Nav = (): ReactElement => {
                             }
                             onChange={() =>
                                 stopsConstructor.stops.includes(-1)
-                                    ? (stopsConstructor.getStops(-1), stopsConstructor.getStops(3))
+                                    ? (stopsConstructor.getStops(-1),
+                                      stopsConstructor.getStops(3))
                                     : stopsConstructor.getStops(3)
                             }
                             type="checkbox"
@@ -112,4 +115,4 @@ export const Nav = (): ReactElement => {
             </div>
         </div>
     )
-}
+})
