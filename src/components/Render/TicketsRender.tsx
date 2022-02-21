@@ -3,7 +3,7 @@ import Tick from '../../images/Tick.png'
 import Arrow from '../../images/arrow.png'
 import { IntTicket } from '../../types/tickets'
 import { observer } from 'mobx-react-lite'
-import modalConstructor from '../../store/reducers/modalMobx'
+import modalConstructor from '../../store/modal'
 
 interface IntTickets {
     ticket: IntTicket

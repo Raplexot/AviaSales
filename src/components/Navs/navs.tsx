@@ -1,10 +1,11 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import './navs.css'
-import stopsConstructor from '../../store/reducers/stopsMobX'
-import moneyCurrency from '../../store/reducers/moneyCurrencyMobx'
+import stopsConstructor from '../../store/stops'
+import moneyCurrency from '../../store/moneyCurrency'
 import { observer } from 'mobx-react-lite'
 
 export const Nav = observer((): ReactElement => {
+    const {stops} = stopsConstructor;
     return (
         <div className="boxes">
             <div className="container">
@@ -34,7 +35,7 @@ export const Nav = observer((): ReactElement => {
                 <div className="checkPoint">
                     <label className="label">
                         <input
-                            checked={stopsConstructor.stops.includes(-1)}
+                            checked={stops.includes(-1)}
                             onChange={() => {
                                 stopsConstructor.getStops(-1)
                             }}
@@ -46,11 +47,11 @@ export const Nav = observer((): ReactElement => {
                     <label className="label">
                         <input
                             checked={
-                                stopsConstructor.stops.includes(0) ||
-                                stopsConstructor.stops.includes(-1)
+                                stops.includes(0) ||
+                                stops.includes(-1)
                             }
                             onChange={() =>
-                                stopsConstructor.stops.includes(-1)
+                                stops.includes(-1)
                                     ? (stopsConstructor.getStops(-1),
                                       stopsConstructor.getStops(0))
                                     : stopsConstructor.getStops(0)
@@ -63,11 +64,11 @@ export const Nav = observer((): ReactElement => {
                     <label className="label">
                         <input
                             checked={
-                                stopsConstructor.stops.includes(1) ||
-                                stopsConstructor.stops.includes(-1)
+                                stops.includes(1) ||
+                                stops.includes(-1)
                             }
                             onChange={() =>
-                                stopsConstructor.stops.includes(-1)
+                                stops.includes(-1)
                                     ? (stopsConstructor.getStops(-1),
                                       stopsConstructor.getStops(1))
                                     : stopsConstructor.getStops(1)
@@ -80,11 +81,11 @@ export const Nav = observer((): ReactElement => {
                     <label className="label">
                         <input
                             checked={
-                                stopsConstructor.stops.includes(2) ||
-                                stopsConstructor.stops.includes(-1)
+                                stops.includes(2) ||
+                                stops.includes(-1)
                             }
                             onChange={() =>
-                                stopsConstructor.stops.includes(-1)
+                                stops.includes(-1)
                                     ? (stopsConstructor.getStops(-1),
                                       stopsConstructor.getStops(2))
                                     : stopsConstructor.getStops(2)
@@ -97,11 +98,11 @@ export const Nav = observer((): ReactElement => {
                     <label className="label">
                         <input
                             checked={
-                                stopsConstructor.stops.includes(3) ||
-                                stopsConstructor.stops.includes(-1)
+                                stops.includes(3) ||
+                                stops.includes(-1)
                             }
                             onChange={() =>
-                                stopsConstructor.stops.includes(-1)
+                                stops.includes(-1)
                                     ? (stopsConstructor.getStops(-1),
                                       stopsConstructor.getStops(3))
                                     : stopsConstructor.getStops(3)

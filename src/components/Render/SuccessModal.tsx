@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import './TicketRender.scss'
-import modalConstructor from '../../store/reducers/modalMobx'
+import modalConstructor from '../../store/modal'
 import { observer } from 'mobx-react-lite'
 
 const SuccessModal = observer((): JSX.Element => {

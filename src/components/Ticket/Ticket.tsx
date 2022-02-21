@@ -3,19 +3,20 @@ import TicketsRender from '../Render/TicketsRender'
 import FormModal from '../Render/FormModal'
 import SuccessModal from '../Render/SuccessModal'
 import '../Render/TicketRender.scss'
-import ticketConstructor from '../../store/reducers/ticketsMobX'
-import moneyConstructor from '../../store/reducers/moneyMobx'
-import stopsConstructor from '../../store/reducers/stopsMobX'
-import currencyConstructor from '../../store/reducers/moneyCurrencyMobx'
+import ticketStore from '../../store/tickets'
+import moneyStore from '../../store/money'
+import stopsStore from '../../store/stops'
+import currencyStore from '../../store/moneyCurrency'
 import { observer } from 'mobx-react-lite'
+
 const Ticket: FC = observer((): JSX.Element => {
-    const { tickets, error, loading } = ticketConstructor
-    const { moneyCurrency } = currencyConstructor
-    const { stops } = stopsConstructor
-    const { money, moneyError, moneyLoading } = moneyConstructor
+    const { tickets, error, loading } = ticketStore
+    const { moneyCurrency } = currencyStore
+    const { stops } = stopsStore
+    const { money, moneyError, moneyLoading } = moneyStore
     useEffect(() => {
-        moneyConstructor.getMoney()
-        ticketConstructor.getTicket()
+        moneyStore.getMoney()
+        ticketStore.getTicket()
     }, [moneyCurrency])
 
     const memo = useMemo(
@@ -31,7 +32,7 @@ const Ticket: FC = observer((): JSX.Element => {
     if (moneyError || error) {
         return (
             <h1>
-                {error} {moneyError}
+                {error || moneyError}
             </h1>
         )
     }
@@ -39,7 +40,7 @@ const Ticket: FC = observer((): JSX.Element => {
     return (
         <div className="AllTickets">
             {memo.map((ticket) => (
-                <div key={Math.random()} className="TicketAdapt">
+                <div key={ticket.price+ticket.stops} className="TicketAdapt">
                     <TicketsRender
                         ticket={ticket}
                         currency={money[moneyCurrency]}

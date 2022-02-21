@@ -1,5 +1,5 @@
-import { makeAutoObservable } from 'mobx'
-import { IntTicket, TicketState, IntTickets } from '../../types/tickets'
+import { makeAutoObservable, runInAction } from 'mobx'
+import { IntTicket, TicketState, IntTickets } from '../types/tickets'
 
 const initialState: TicketState = {
     tickets: [],
@@ -19,19 +19,23 @@ class TicketConstructor {
     }
 
     getTicket(): void {
-        initialState.loading = true
+        this.loading = true
         fetch(
             'https://raw.githubusercontent.com/BrowningForce/aviasales-react/master/tickets.json'
-        )
+            )
             .then((res) => res.json())
             .then((json) => {
-                this.tickets = [
-                    ...json.tickets.sort((obj1: IntTicket, obj2: IntTicket) =>
-                        obj1.price > obj2.price ? 1 : -1
-                    ),
-                ]
+                runInAction(()=>{
+                    this.tickets = [
+                        ...json.tickets
+                        .sort((obj1: IntTicket, obj2: IntTicket) =>
+                        obj1.price > obj2.price ? 1 : -1,
+                        this.loading = false
+                        ),
+                    ]
+
+                })
             })
-        initialState.loading = false
     }
 }
 export default new TicketConstructor()

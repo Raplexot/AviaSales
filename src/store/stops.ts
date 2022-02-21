@@ -1,4 +1,4 @@
-import { stopsState, IntStops } from '../../types/tickets'
+import { stopsState, IntStops } from '../types/tickets'
 import { makeAutoObservable } from 'mobx'
 
 const initialState: stopsState = {

@@ -1,5 +1,5 @@
-import { IntMoney, MoneyState } from '../../types/tickets'
-import { makeAutoObservable } from 'mobx'
+import { IntMoney, MoneyState } from '../types/tickets'
+import { makeAutoObservable, runInAction } from 'mobx'
 
 const initialStateMoney: MoneyState = {
     money: {},
@@ -19,18 +19,21 @@ class Money {
     }
 
     getMoney = (): void => {
-        initialStateMoney.moneyLoading = true
+        this.moneyLoading = true
         try {
             fetch('https://open.er-api.com/v6/latest/RUB')
                 .then((res) => res.json())
                 .then((data) => {
-                    this.money = data.rates
+                    runInAction(()=>{
+                        this.money = data.rates
+                        this.moneyLoading = false
+
+                    })
                 })
         } catch (error) {
-            initialStateMoney.moneyError = 'Error of loading'
-            initialStateMoney.moneyLoading = false
+            this.moneyError = 'Error of loading'
+            this.moneyLoading = false
         }
-        initialStateMoney.moneyLoading = true
     }
 }
 export default new Money()

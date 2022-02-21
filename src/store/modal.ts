@@ -1,8 +1,8 @@
 import { makeAutoObservable } from 'mobx'
-import { ModalState } from '../../types/tickets'
+import { ModalState } from '../types/tickets'
 
 const initialState: ModalState = {
-    modals: [],
+    modals: [false,false],
 }
 
 class Modal {

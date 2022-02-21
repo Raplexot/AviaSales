@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx'
-import { MoneyCurrencyState } from '../../types/tickets'
+import { MoneyCurrencyState } from '../types/tickets'
 
 const initialStateCurrencyMoney: MoneyCurrencyState = {
     moneyCurrency: 'RUB',
