@@ -6,6 +6,16 @@ import { observer } from 'mobx-react-lite'
 
 export const Nav = observer((): ReactElement => {
     const { stops } = stopsConstructor
+
+    function stopsHandler(e:number):void{
+        return(
+            stops.includes(-1)
+            ? (stopsConstructor.getStops(-1),
+            stopsConstructor.getStops(e))
+            : stopsConstructor.getStops(e)
+        )
+    }
+
     return (
         <div className="boxes">
             <div className="container">
@@ -47,56 +57,48 @@ export const Nav = observer((): ReactElement => {
                     <label className="label">
                         <input
                             checked={stops.includes(0) || stops.includes(-1)}
-                            onChange={() =>
-                                stops.includes(-1)
-                                    ? (stopsConstructor.getStops(-1),
-                                      stopsConstructor.getStops(0))
-                                    : stopsConstructor.getStops(0)
+                            onChange={(e) =>
+                                stopsHandler(+e.target.value)
                             }
                             type="checkbox"
                             name="stops"
+                            value="0"
                         />
                         No trasfers
                     </label>
                     <label className="label">
                         <input
                             checked={stops.includes(1) || stops.includes(-1)}
-                            onChange={() =>
-                                stops.includes(-1)
-                                    ? (stopsConstructor.getStops(-1),
-                                      stopsConstructor.getStops(1))
-                                    : stopsConstructor.getStops(1)
+                            onChange={(e) =>
+                                stopsHandler(+e.target.value)
                             }
                             type="checkbox"
                             name="stops"
+                            value="1"
                         />
                         One transfer
                     </label>
                     <label className="label">
                         <input
                             checked={stops.includes(2) || stops.includes(-1)}
-                            onChange={() =>
-                                stops.includes(-1)
-                                    ? (stopsConstructor.getStops(-1),
-                                      stopsConstructor.getStops(2))
-                                    : stopsConstructor.getStops(2)
+                            onChange={(e) =>
+                                stopsHandler(+e.target.value)
                             }
                             type="checkbox"
                             name="stops"
+                            value="2"
                         />
                         Two transfers
                     </label>
                     <label className="label">
                         <input
                             checked={stops.includes(3) || stops.includes(-1)}
-                            onChange={() =>
-                                stops.includes(-1)
-                                    ? (stopsConstructor.getStops(-1),
-                                      stopsConstructor.getStops(3))
-                                    : stopsConstructor.getStops(3)
+                            onChange={(e) =>
+                                stopsHandler(+e.target.value)
                             }
                             type="checkbox"
                             name="stops"
+                            value="3"
                         />
                         Three transfers
                     </label>

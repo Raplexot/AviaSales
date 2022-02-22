@@ -58,7 +58,7 @@
         }
     }
 }
-@media (min-width: 1025px) and (max-width: 2100px) {
+@media (min-width: 1025px)  {
     .boxes {
         @include mixedBoxes;
         max-width: 400px;
@@ -90,7 +90,7 @@
         }
     }
 }
-@media (min-width: 500px) and (max-width: 1025px) {
+@media (min-width: 601px) and (max-width: 1024px) {
     .boxes {
         @include mixedBoxes;
         max-width: 500px;
@@ -126,7 +126,7 @@
         }
     }
 }
-@media (min-width: 400px) and (max-width: 600px) {
+@media  (max-width: 600px) {
     .boxes {
         @include mixedBoxes;
         max-width: 500px;
