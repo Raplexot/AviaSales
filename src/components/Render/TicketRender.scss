@@ -1,3 +1,10 @@
+@mixin arrow($Ar) {
+    .Arrow {
+        height: 50px;
+        width: $Ar;
+        text-align: center;
+    }
+}
 @mixin formModalAndSuccessModal {
     .modal {
         position: fixed;
@@ -296,11 +303,7 @@
     @include formModalAndSuccessModal;
     @include mixinButton(300px, 25px, 15px);
     @include mixinInfo(20px);
-    .Arrow {
-        height: 50px;
-        font-size: 0px;
-        text-align: center;
-    }
+    @include arrow(100px);
 }
 @media (min-width: 500px) and (max-width: 900px) {
     @include formModalAndSuccessModal;
@@ -310,12 +313,7 @@
     }
     @include mixinButton(300px, 0px, 15px);
     @include mixinInfo(20px);
-    .Arrow {
-        width: 100%;
-        width: 50px;
-        height: 50px;
-        text-align: center;
-    }
+    @include arrow(50px);
 }
 
 @media (min-width: 400px) and (max-width: 600px) {
@@ -333,10 +331,5 @@
         width: 80px;
         overflow: scroll;
     }
-    .Arrow {
-        width: 100%;
-        width: 50px;
-        height: 50px;
-        text-align: center;
-    }
+    @include arrow(50px);
 }

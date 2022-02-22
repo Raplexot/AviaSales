@@ -12,7 +12,7 @@ interface IntTickets {
 }
 
 const TicketsRender = observer(
-    ({ ticket, currency = 0, currencyName = '' }: IntTickets) => {
+    ({ ticket, currency = 0, currencyName = 'RUB' }: IntTickets) => {
         return (
             <div className="ContainerT">
                 <div className="Contain">
@@ -32,12 +32,9 @@ const TicketsRender = observer(
                                 >
                                     Buy only for :
                                     <span>
-                                        {' ' +
-                                            (ticket.price * currency).toFixed(
-                                                0
-                                            ) +
-                                            ' ' +
-                                            currencyName}{' '}
+                                        {`${(ticket.price * currency).toFixed(
+                                            0
+                                        )} ${currencyName}`}
                                     </span>
                                 </button>
                             </>

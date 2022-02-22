@@ -24,13 +24,13 @@ class Money {
             fetch('https://open.er-api.com/v6/latest/RUB')
                 .then((res) => res.json())
                 .then((data) => {
-                    runInAction(()=>{
+                    runInAction(() => {
                         this.money = data.rates
                         this.moneyLoading = false
-
                     })
                 })
         } catch (error) {
+            console.log(error)
             this.moneyError = 'Error of loading'
             this.moneyLoading = false
         }

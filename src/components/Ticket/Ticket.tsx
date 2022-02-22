@@ -17,7 +17,7 @@ const Ticket: FC = observer((): JSX.Element => {
     useEffect(() => {
         moneyStore.getMoney()
         ticketStore.getTicket()
-    }, [moneyCurrency])
+    }, [])
 
     const memo = useMemo(
         () =>
@@ -30,17 +30,13 @@ const Ticket: FC = observer((): JSX.Element => {
         return <h1>Loading</h1>
     }
     if (moneyError || error) {
-        return (
-            <h1>
-                {error || moneyError}
-            </h1>
-        )
+        return <h1>{error || moneyError}</h1>
     }
 
     return (
         <div className="AllTickets">
             {memo.map((ticket) => (
-                <div key={ticket.price+ticket.stops} className="TicketAdapt">
+                <div key={ticket.price + ticket.stops} className="TicketAdapt">
                     <TicketsRender
                         ticket={ticket}
                         currency={money[moneyCurrency]}

@@ -20,22 +20,27 @@ class TicketConstructor {
 
     getTicket(): void {
         this.loading = true
-        fetch(
-            'https://raw.githubusercontent.com/BrowningForce/aviasales-react/master/tickets.json'
+        try {
+            fetch(
+                'https://raw.githubusercontent.com/BrowningForce/aviasales-react/master/tickets.json'
             )
-            .then((res) => res.json())
-            .then((json) => {
-                runInAction(()=>{
-                    this.tickets = [
-                        ...json.tickets
-                        .sort((obj1: IntTicket, obj2: IntTicket) =>
-                        obj1.price > obj2.price ? 1 : -1,
-                        this.loading = false
-                        ),
-                    ]
-
+                .then((res) => res.json())
+                .then((json) => {
+                    runInAction(() => {
+                        this.tickets = [
+                            ...json.tickets.sort(
+                                (obj1: IntTicket, obj2: IntTicket) =>
+                                    obj1.price > obj2.price ? 1 : -1,
+                                this.loading = false
+                            ),
+                        ]
+                    })
                 })
-            })
+        } catch (error) {
+            console.log(error)
+            this.loading = false
+            this.error = 'Error of loading'
+        }
     }
 }
 export default new TicketConstructor()

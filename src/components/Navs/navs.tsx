@@ -5,7 +5,7 @@ import moneyCurrency from '../../store/moneyCurrency'
 import { observer } from 'mobx-react-lite'
 
 export const Nav = observer((): ReactElement => {
-    const {stops} = stopsConstructor;
+    const { stops } = stopsConstructor
     return (
         <div className="boxes">
             <div className="container">
@@ -46,10 +46,7 @@ export const Nav = observer((): ReactElement => {
                     </label>
                     <label className="label">
                         <input
-                            checked={
-                                stops.includes(0) ||
-                                stops.includes(-1)
-                            }
+                            checked={stops.includes(0) || stops.includes(-1)}
                             onChange={() =>
                                 stops.includes(-1)
                                     ? (stopsConstructor.getStops(-1),
@@ -63,10 +60,7 @@ export const Nav = observer((): ReactElement => {
                     </label>
                     <label className="label">
                         <input
-                            checked={
-                                stops.includes(1) ||
-                                stops.includes(-1)
-                            }
+                            checked={stops.includes(1) || stops.includes(-1)}
                             onChange={() =>
                                 stops.includes(-1)
                                     ? (stopsConstructor.getStops(-1),
@@ -80,10 +74,7 @@ export const Nav = observer((): ReactElement => {
                     </label>
                     <label className="label">
                         <input
-                            checked={
-                                stops.includes(2) ||
-                                stops.includes(-1)
-                            }
+                            checked={stops.includes(2) || stops.includes(-1)}
                             onChange={() =>
                                 stops.includes(-1)
                                     ? (stopsConstructor.getStops(-1),
@@ -97,10 +88,7 @@ export const Nav = observer((): ReactElement => {
                     </label>
                     <label className="label">
                         <input
-                            checked={
-                                stops.includes(3) ||
-                                stops.includes(-1)
-                            }
+                            checked={stops.includes(3) || stops.includes(-1)}
                             onChange={() =>
                                 stops.includes(-1)
                                     ? (stopsConstructor.getStops(-1),

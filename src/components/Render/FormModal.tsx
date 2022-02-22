@@ -24,12 +24,7 @@ const FormModal = observer(() => {
             pass: Yup.string()
                 .matches(/[A-Z][0-9]{8}$/, 'Enter passcode')
                 .required('Required'),
-            email: Yup.string()
-                .matches(
-                    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                    'Invalid email'
-                )
-                .required('Required'),
+            email: Yup.string().email('Invalid email').required('Required'),
             tel: Yup.string()
                 .matches(
                     /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
